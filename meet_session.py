@@ -510,7 +510,10 @@ def _inject_caption_collector(page):
         if (window.__capObs) { window.__capObs.disconnect(); window.__capObs = null; }
         window.__captions = [];
         window.__capSeen = new Set();
-        const container = document.querySelector('[role="region"][aria-label*="убтит" i]') || document.querySelector('[role="region"][aria-label*="aption" i]');
+        const container = Array.from(document.querySelectorAll('[role="region"]')).find(el => {
+            const label = (el.getAttribute('aria-label') || '').toLowerCase();
+            return label.includes('убтит') || label.includes('caption') || label.includes('subtitle') || label.includes('субтит');
+        });
         if (!container) return "NO_CONTAINER";
         const collect = () => {
             const blocks = container.querySelectorAll('.nMcdL');
