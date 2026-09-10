@@ -611,10 +611,10 @@ def _wait_and_join(page, mid):
                 confirm_deadline = max(confirm_deadline, time.time() + QUEUED_WAIT_SEC)
                 log("join", "Мы в очереди на допуск организатором — жду")
             if not switch_clicked:
-                switch_clicked = _click_label(page, SWITCH_DEVICE_LABELS)
+                switch_clicked = _click_label(page, JOIN_ALSO_LABELS + SWITCH_DEVICE_LABELS)
                 if switch_clicked:
                     confirm_deadline = time.time() + JOIN_CONFIRM_SEC
-                    log("join", "Switch pressed: " + switch_clicked)
+                    log("join", "Dialog pressed: " + switch_clicked)
             if time.time() > confirm_deadline:
                 if _match(text, NOBODY_MARKERS):
                     return RC_SKIP_NOBODY, "После клика комната оказалась пустой"
