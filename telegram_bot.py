@@ -264,8 +264,9 @@ async def kb_buttons(message: Message):
         text, kb = status_view(cfg)
         await message.answer(text, reply_markup=kb)
     elif t == "🛑 Стоп все":
-        ids = sessions.stop_all()
-        await message.answer(f"🛑 Сигнал стопа отправлен: {len(ids)} сессий")
+        count = len(sessions.running_ids())
+        result = await sessions.stop_all()
+        await message.answer(f"🛑 Сигнал стопа отправлен: {count} сессий")
 
 
 @dp.message(Command("list"))
@@ -420,10 +421,11 @@ async def cmd_stop(message: Message, command: CommandObject):
 
 @dp.message(Command("stopall"))
 async def cmd_stopall(message: Message):
+    count = len(sessions.running_ids())
+    result = await sessions.stop_all()
     if message.from_user.id != CHAT_ID:
         return
-    ids = sessions.stop_all()
-    await message.answer(f"🛑 Сигнал стопа отправлен: {len(ids)} сессий")
+    await message.answer(f"🛑 Сигнал стопа отправлен: {count} сессий")
 
 
 @dp.message(F.text.func(lambda t: parse_date_str(t) is not None))
@@ -510,8 +512,9 @@ async def cb_stopall(cb: CallbackQuery):
         if cb.from_user.id != CHAT_ID:
             await cb.answer("Нет доступа", show_alert=True)
             return
-        ids = sessions.stop_all()
-        await cb.answer(f"Стоп отправлен: {len(ids)}")
+        count = len(sessions.running_ids())
+        result = await sessions.stop_all()
+        await cb.answer(f"Стоп отправлен: {count}")
     except Exception:
         log.exception("Ошибка в cb_stopall")
         await cb.answer("Ошибка внутри cb_stopall, смотри лог", show_alert=True)
