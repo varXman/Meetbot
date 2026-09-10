@@ -1,0 +1,5 @@
+
+=== старт 2026-09-10 20:27:34 (Киев), sid=None ===
+  File "/opt/meet-bot/meet_session.py", line 600
+    if clicked:
+IndentationError: unexpected indent

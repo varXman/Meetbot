@@ -1,11 +1,9 @@
-2026-09-10 17:16:29,210 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
-2026-09-10 17:16:29,210 aiogram.dispatcher INFO Start polling
-2026-09-10 17:16:29,264 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-10 17:16:59,217 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:17:29 EEST)" (scheduled at 2026-09-10 20:16:59.206857+03:00)
-2026-09-10 17:16:59,225 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:17:29 EEST)" executed successfully
-2026-09-10 17:17:04,668 aiogram.event INFO Update id=566224787 is handled. Duration 85 ms by bot id=8779376364
-2026-09-10 17:17:07,106 aiogram.event INFO Update id=566224788 is not handled. Duration 18 ms by bot id=8779376364
-2026-09-10 17:17:07,106 aiogram.event ERROR Cause exception while process update id=566224788 by bot id=8779376364
+2026-09-10 17:27:08,918 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-10 17:27:08,919 aiogram.dispatcher INFO Start polling
+2026-09-10 17:27:09,206 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-10 17:27:10,568 aiogram.event INFO Update id=566224792 is handled. Duration 92 ms by bot id=8779376364
+2026-09-10 17:27:34,363 aiogram.event INFO Update id=566224793 is not handled. Duration 9 ms by bot id=8779376364
+2026-09-10 17:27:34,363 aiogram.event ERROR Cause exception while process update id=566224793 by bot id=8779376364
 ValueError: too many values to unpack (expected 2)
 Traceback (most recent call last):
   File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
@@ -57,13 +55,5 @@ Traceback (most recent call last):
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     ^^^^^^^
 ValueError: too many values to unpack (expected 2)
-2026-09-10 17:17:29,209 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:17:59 EEST)" (scheduled at 2026-09-10 20:17:29.206857+03:00)
-2026-09-10 17:17:29,213 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:17:59 EEST)" executed successfully
-2026-09-10 17:17:59,210 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:18:29 EEST)" (scheduled at 2026-09-10 20:17:59.206857+03:00)
-2026-09-10 17:17:59,214 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:18:29 EEST)" executed successfully
-2026-09-10 17:18:29,209 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:18:59 EEST)" (scheduled at 2026-09-10 20:18:29.206857+03:00)
-2026-09-10 17:18:29,215 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:18:59 EEST)" executed successfully
-2026-09-10 17:18:59,210 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:19:29 EEST)" (scheduled at 2026-09-10 20:18:59.206857+03:00)
-2026-09-10 17:18:59,214 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:19:29 EEST)" executed successfully
-2026-09-10 17:19:29,207 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:19:59 EEST)" (scheduled at 2026-09-10 20:19:29.206857+03:00)
-2026-09-10 17:19:29,212 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:19:59 EEST)" executed successfully
+2026-09-10 17:27:38,915 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:28:08 EEST)" (scheduled at 2026-09-10 20:27:38.913639+03:00)
+2026-09-10 17:27:38,920 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:28:08 EEST)" executed successfully
