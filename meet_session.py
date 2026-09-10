@@ -311,12 +311,21 @@ def _click_label(page, labels):
                 return lab
         except Exception:
             pass
-        # 4) locator text= (div/button без role)
+        # 4) get_by_text (modern Playwright API)
         try:
-            loc = page.locator(f'text={lab}').first
+            loc = page.get_by_text(lab, exact=False).first
             if loc.count() > 0 and loc.is_visible():
                 loc.click(timeout=4000)
-                log("join", "Нажато (text): " + lab)
+                log("join", "Нажато (get_text): " + lab)
+                return lab
+        except Exception:
+            pass
+        # 5) button / div[role=button] via :has-text (for pointer-events:none inner spans)
+        try:
+            loc = page.locator(f'button:has-text("{lab}")').first
+            if loc.count() > 0 and loc.is_visible():
+                loc.click(timeout=4000)
+                log("join", "Нажато (btn-has-text): " + lab)
                 return lab
         except Exception:
             pass
