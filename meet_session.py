@@ -483,26 +483,60 @@ def _scan_roster(page, text=None):
 # ---------- Вход ----------
 
 def _enable_captions(page, mid):
-    labels = ["Turn on captions", "Включить субтитры", "Увімкнути субтитри"]
-    off_labels = ["Turn off captions", "Выключить субтитры", "Вимкнути субтитри"]
-    for label in off_labels:
+    """Включить субтитры через JS keyboard event 'c'."""
+    # 1) Отправляем клавишу 'c' через JS (bubbles=true, попадает в Meet)
+    for attempt in range(1, 4):
         try:
-            if page.locator(f'button[aria-label*="{label}"]').count() > 0:
-                log(mid, "Субтитры уже включены")
+            page.evaluate("""() => {
+                const e1 = new KeyboardEvent('keydown', {key: 'c', code: 'KeyC', bubbles: true});
+                const e2 = new KeyboardEvent('keyup',   {key: 'c', code: 'KeyC', bubbles: true});
+                document.dispatchEvent(e1);
+                document.dispatchEvent(e2);
+            }""")
+            log(mid, "Caption hotkey sent, attempt " + str(attempt))
+            time.sleep(2.5)
+        except Exception as e:
+            log(mid, "Caption hotkey error: " + str(e))
+            break
+        
+        # 2) Проверяем, появился ли контейнер субтитров
+        try:
+            has_container = page.evaluate("""() => {
+                const r = document.querySelector('[role="region"][aria-label*="убтит"]') ||
+                          document.querySelector('[role="region"][aria-label*="Caption"]') ||
+                          document.querySelector('[role="region"][aria-label*="caption"]') ||
+                          document.querySelector('[role="region"][aria-label*="Субтит"]');
+                return !!r;
+            }""")
+            if has_container:
+                log(mid, "Субтитры ВКЛЮЧЕНЫ (hotkey c)")
                 return True
         except Exception:
             pass
-    for label in labels:
-        try:
-            btn = page.locator(f'button[aria-label*="{label}"]').first
-            if btn.is_visible(timeout=3000):
-                btn.click(timeout=2000)
-                log(mid, "Включил субтитры")
-                return True
-        except Exception:
-            pass
+    
+    # 3) Fallback: ищем любую кнопку с caption/subtitle в aria-label
+    try:
+        clicked = page.evaluate("""() => {
+            const kws = ['caption', 'subtit', 'субтит', 'убтит'];
+            const btns = Array.from(document.querySelectorAll('button, [role="button"]'));
+            for (const b of btns) {
+                const lab = (b.getAttribute('aria-label') || '').toLowerCase();
+                if (kws.some(k => lab.includes(k))) {
+                    b.click();
+                    return lab;
+                }
+            }
+            return null;
+        }""")
+        if clicked:
+            log(mid, "Субтитры включены (клик): " + str(clicked))
+            time.sleep(2)
+            return True
+    except Exception as e:
+        log(mid, "Caption click fallback error: " + str(e))
+    
+    log(mid, "Субтитры ВКЛЮЧИТЬ НЕ УДАЛОСЬ — возможно уже включены или UI изменился")
     return False
-
 
 def _inject_caption_collector(page):
     return page.evaluate(r"""
