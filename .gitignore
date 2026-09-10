@@ -1,12 +1,9 @@
-storage/
 config.yaml
 *.log
 __pycache__/
 chrome_profile/
-storage/
-config.yaml
-*.log
-__pycache__/
-chrome_profile/
-__pycache__/
 *.pyc
+storage/stop_*.flag
+!storage/
+!storage/subs/
+!storage/debug/
