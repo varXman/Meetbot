@@ -539,74 +539,129 @@ def _enable_captions(page, mid):
     return False
 
 def _inject_caption_collector(page):
-    return page.evaluate(r"""
-    () => {
-        if (window.__capObs) { window.__capObs.disconnect(); window.__capObs = null; }
+    result = page.evaluate("""() => {
+        const kws = ['субтитри','субтитры','captions','subtitles','caption','subtitle'];
+        function findRegion() {
+            for (const el of document.querySelectorAll('div[role="region"]')) {
+                const al = (el.getAttribute('aria-label')||'').toLowerCase();
+                if (kws.some(k => al.includes(k))) return el;
+            }
+            return null;
+        }
+        const region = findRegion();
+        if (!region) return "NO_CONTAINER";
         window.__captions = [];
         window.__capSeen = new Set();
-        const container = Array.from(document.querySelectorAll('[role="region"]')).find(el => {
-            const label = (el.getAttribute('aria-label') || '').toLowerCase();
-            return label.includes('убтит') || label.includes('caption') || label.includes('subtitle') || label.includes('субтит');
-        });
-        if (!container) return "NO_CONTAINER";
-        const collect = () => {
-            const blocks = container.querySelectorAll('.nMcdL');
-            for (const block of blocks) {
+        window.__capLastFlush = 0;
+        function pushLine(speaker, text) {
+            if (!text) return;
+            const t = text.trim();
+            if (!t) return;
+            if (window.__capSeen.has(t)) return;
+            window.__capSeen.add(t);
+            const line = (speaker ? speaker + ": " : "") + t;
+            window.__captions.push(line);
+        }
+        function collectFromRegion() {
+            // layout A: blocks .nMcdL
+            for (const block of region.querySelectorAll('.nMcdL')) {
+                const nameEl = block.querySelector('.NWpY1d');
                 const textEl = block.querySelector('.ygicle');
-                if (!textEl) continue;
-                const speakerEl = block.querySelector('.NWpY1d');
-                const speaker = speakerEl ? speakerEl.textContent.trim() : "";
-                const t = textEl.textContent.trim();
-                if (t.length >= 3 && t.length <= 500 && !window.__capSeen.has(t)) {
-                    window.__capSeen.add(t);
-                    const line = speaker ? speaker + ": " + t : t;
-                    window.__captions.push(line);
-                }
+                const speaker = nameEl ? nameEl.textContent.trim() : "";
+                const text = textEl ? textEl.textContent.trim() : "";
+                if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
             }
-        };
-        collect();
-        const obs = new MutationObserver((muts) => {
+            // layout B: direct .ygicle without .nMcdL
+            for (const el of region.querySelectorAll('.ygicle')) {
+                if (el.closest('.nMcdL')) continue;
+                const txt = el.textContent.trim();
+                if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
+            }
+        }
+        collectFromRegion();
+        const obs = new MutationObserver(muts => {
             for (const m of muts) {
-                if (m.type === 'childList') {
-                    for (const node of m.addedNodes) {
-                        if (node.nodeType === Node.ELEMENT_NODE && node.classList && node.classList.contains('nMcdL')) {
-                            const textEl = node.querySelector('.ygicle');
-                            if (!textEl) continue;
-                            const speakerEl = node.querySelector('.NWpY1d');
-                            const speaker = speakerEl ? speakerEl.textContent.trim() : "";
-                            const t = textEl.textContent.trim();
-                            if (t.length >= 3 && t.length <= 500 && !window.__capSeen.has(t)) {
-                                window.__capSeen.add(t);
-                                const line = speaker ? speaker + ": " + t : t;
-                                window.__captions.push(line);
-                            }
+                for (const node of m.addedNodes) {
+                    if (node.nodeType !== 1) continue;
+                    if (node.matches && node.matches('.nMcdL')) {
+                        const nameEl = node.querySelector('.NWpY1d');
+                        const textEl = node.querySelector('.ygicle');
+                        const speaker = nameEl ? nameEl.textContent.trim() : "";
+                        const text = textEl ? textEl.textContent.trim() : "";
+                        if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
+                    } else if (node.matches && node.matches('.ygicle')) {
+                        if (node.closest('.nMcdL')) continue;
+                        const txt = node.textContent.trim();
+                        if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
+                    } else if (node.querySelectorAll) {
+                        for (const block of node.querySelectorAll('.nMcdL')) {
+                            const nameEl = block.querySelector('.NWpY1d');
+                            const textEl = block.querySelector('.ygicle');
+                            const speaker = nameEl ? nameEl.textContent.trim() : "";
+                            const text = textEl ? textEl.textContent.trim() : "";
+                            if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
+                        }
+                        for (const el of node.querySelectorAll('.ygicle')) {
+                            if (el.closest('.nMcdL')) continue;
+                            const txt = el.textContent.trim();
+                            if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
                         }
                     }
                 }
             }
         });
-        obs.observe(container, { childList: true, subtree: true });
-        window.__capObs = obs;
+        obs.observe(region, { childList: true, subtree: true });
+        window.__capObserver = obs;
         return "OK";
-    }
-    """)
+    }""")
+    return result
 
 def _flush_captions(page, mid, token=None, chat_id=None):
+    import os, requests
     try:
-        arr = page.evaluate("window.__captions || []")
-        if arr:
-            page.evaluate("window.__captions = []")
-            os.makedirs(SUBS_DIR, exist_ok=True)
-            path = os.path.join(SUBS_DIR, mid + ".txt")
-            with open(path, "a", encoding="utf-8") as f:
-                f.write("\n".join(arr) + "\n")
-            if token and chat_id:
-                send_tg(token, chat_id, "📝 Субтитры +" + str(len(arr)) + " строк, файл: " + path)
-            return len(arr)
+        lines = page.evaluate("""() => {
+            const out = window.__captions || [];
+            window.__captions = [];
+            return out;
+        }""")
+        if not lines:
+            return
+        filtered = []
+        noise = {"zoom_in","open_in_new","open_in_full","fullscreen","fullscreen_exit",
+                 "present_to_all","stop_presenting","more_vert","expand_more","chat","people",
+                 "schedule","info","call_end","mic","videocam","videocam_off","mic_off",
+                 "push_pin","screen_share","stop_screen_share","closed_caption","closed_caption_off",
+                 "present now","est.","mes."}
+        for l in lines:
+            txt = l.split(":", 1)[1] if ":" in l else l
+            t2 = txt.strip().lower().replace(" ","_").replace(":","")
+            if t2 in noise:
+                continue
+            if len(txt.strip()) < 10:
+                continue
+            if all(c in "abcdefghijklmnopqrstuvwxyz_0123456789" for c in t2):
+                if len(txt.strip()) <= 20:
+                    continue
+            filtered.append(l)
+        if not filtered:
+            return
+        fn = os.path.join(SUBS_DIR, f"{mid}.txt")
+        with open(fn, "a", encoding="utf-8") as f:
+            for line in filtered:
+                f.write(line + "\n")
+        logger.info("[cap] flush %s lines to %s", len(filtered), fn)
+        if token and chat_id:
+            try:
+                txt = f"[subs] +{len(filtered)} строк -> {fn}"
+                requests.post(
+                    f"https://api.telegram.org/bot{token}/sendMessage",
+                    json={"chat_id": chat_id, "text": txt},
+                    timeout=15,
+                )
+            except Exception as e:
+                logger.warning("tg cap notice err: %s", e)
     except Exception as e:
-        log("meet", "Caption flush error: " + str(e))
-    return 0
-
+        logger.error("Caption flush error: %s", e)
 
 def _ensure_media_off(page, mid):
     prefixes = ("Выключить ", "Вимкнути ", "Turn off ", "Отключить ")
