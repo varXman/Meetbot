@@ -44,9 +44,4 @@ meetings:
 - id: fizkultura
   title: ФІЗИЧНА КУЛЬТУРА
   url: https://meet.google.com/baw-wpsz-scr
-schedule:
-- meeting: spec_tech
-  time: '12:20'
-  duration: 35
-  sid: 7fe5
-  date: '2026-09-10'
+schedule: []

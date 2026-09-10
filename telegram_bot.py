@@ -386,17 +386,22 @@ async def cmd_join(message: Message, command: CommandObject):
     if not args:
         await message.answer("Формат: /join «id» [минуты]")
         return
-    mid = args[0]
+    arg0 = args[0]
     try:
         dur = int(args[1]) if len(args) > 1 else 90
     except ValueError:
         await message.answer("Минуты должны быть числом")
         return
-    cfg = cm.load_config()
-    m = cm.find_meeting(cfg, mid)
-    if not m:
-        await message.answer(f"Нет встречи с id <code>{html.escape(mid)}</code>")
-        return
+    if arg0.startswith("http://") or arg0.startswith("https://"):
+        mid = "manual_" + str(int(__import__("time").time()))
+        m = {"id": mid, "url": arg0, "title": "Ручной вход"}
+    else:
+        cfg = cm.load_config()
+        m = cm.find_meeting(cfg, arg0)
+        if not m:
+            await message.answer(f"Нет встречи с id <code>{html.escape(arg0)}</code>")
+            return
+        mid = arg0
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     await message.answer(html.escape(msg))
 

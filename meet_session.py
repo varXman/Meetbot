@@ -400,21 +400,44 @@ def _scan_roster(page, text=None):
     except Exception as e:
         logger.warning("roster scan error: %s", e)
 
+    # Очистка UI-артефактов
+    _skip_ui = ("Показать", "Вы", "Ви", "К началу", "До початку", "Присоединиться", "Подключиться")
+    names = [n for n in names if n and n.strip() and not any(s in n for s in _skip_ui)]
     return names, org_present, org_name
 
 
 # ---------- Вход ----------
 
 def _ensure_media_off(page, mid):
-    for label in ("Turn off camera", "Выключить камеру", "Вимкнути камеру",
-                  "Turn off microphone", "Выключить микрофон", "Вимкнути мікрофон"):
+    prefixes = ("Выключить ", "Вимкнути ", "Turn off ", "Отключить ")
+    devices = ("камеру", "микрофон", "camera", "microphone", "мікрофон")
+    found = False
+    for p in prefixes:
+        for d in devices:
+            label = p + d
+            try:
+                btn = page.locator(f'button[aria-label*="{label}"]').first
+                if btn.is_visible(timeout=3000):
+                    btn.click(timeout=2000)
+                    log(mid, f"Отключил: {label}")
+                    found = True
+            except Exception:
+                pass
+            try:
+                btn = page.locator(f'div[role="button"][aria-label*="{label}"]').first
+                if btn.is_visible(timeout=3000):
+                    btn.click(timeout=2000)
+                    log(mid, f"Отключил (div): {label}")
+                    found = True
+            except Exception:
+                pass
+    if not found:
         try:
-            btn = page.locator(f"[aria-label*=\'{label}\']").first
-            if btn.is_visible(timeout=1200):
-                btn.click(timeout=2000)
-                log(mid, f"Отключил: {label}")
-        except Exception:
-            pass
+            page.keyboard.press("Control+e")
+            page.keyboard.press("Control+d")
+            log(mid, "Отправлены Ctrl+E и Ctrl+D (fallback)")
+        except Exception as e:
+            log(mid, "Fallback не сработал: " + str(e))
 
 
 def _wait_and_join(page, mid):
@@ -552,7 +575,7 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
                     log(prefix, "Организатор ещё не виден, попытка " + str(attempt + 1) + "/8")
 
             organizer = org_name
-            total = max(_count_participants(page), len(names))
+            total = len(names) if names else _count_participants(page)
             names_list = sorted(names)
             log(prefix, "Всего: " + str(total) + ", уникальных имён: " + str(len(names)))
             log(prefix, "Организатор: " + str(organizer or "не найден"))
@@ -593,7 +616,7 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
                     organizer = org_name
                 if names_now:
                     names |= names_now
-                total = max(_count_participants(page), len(names_now))
+                total = len(names_now) if names_now else _count_participants(page)
 
                 left_sec = int(max(0, deadline - now))
                 log("meet", "Участников: " + str(total) +

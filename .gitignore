@@ -1,0 +1,5 @@
+__pycache__/
+chrome_profile/
+storage/debug/
+*.log
+*.flag
