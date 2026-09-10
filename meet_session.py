@@ -552,28 +552,23 @@ def _inject_caption_collector(page):
         if (!r) return "NO_CONTAINER";
         window.__captions = [];
         window.__capSeen = new Set();
-        function addBlock(node) {
-            if (!node.classList || !node.classList.contains('nMcdL')) return;
-            const nameEl = node.querySelector('.NWpY1d');
-            const textEl = node.querySelector('.ygicle');
-            if (!textEl) return;
-            const name = nameEl ? nameEl.textContent.trim() : '';
-            const text = textEl.textContent.trim();
-            if (!text || text.length < 10) return;
-            if (window.__capSeen.has(text)) return;
-            window.__capSeen.add(text);
-            window.__captions.push((name ? name + ': ' : '') + text);
-        }
-        r.querySelectorAll('.nMcdL').forEach(addBlock);
-        const obs = new MutationObserver(muts => {
-            for (const m of muts) {
-                for (const node of m.addedNodes) {
-                    if (node.nodeType === 1 && node.classList && node.classList.contains('nMcdL')) {
-                        addBlock(node);
-                    }
+        function scan() {
+            let currentName = '';
+            for (const node of r.querySelectorAll('.nMcdL, .ygicle')) {
+                if (node.classList.contains('nMcdL')) {
+                    const el = node.querySelector('.NWpY1d');
+                    currentName = el ? el.textContent.trim() : '';
+                } else if (node.classList.contains('ygicle')) {
+                    const text = node.textContent.trim();
+                    if (!text || text.length < 10) continue;
+                    if (window.__capSeen.has(text)) continue;
+                    window.__capSeen.add(text);
+                    window.__captions.push((currentName ? currentName + ': ' : '') + text);
                 }
             }
-        });
+        }
+        scan();
+        const obs = new MutationObserver(muts => scan());
         obs.observe(r, { childList: true, subtree: true });
         window.__capObserver = obs;
         return "OK";
