@@ -509,41 +509,51 @@ def _inject_caption_collector(page):
     () => {
         if (window.__capObs) { window.__capObs.disconnect(); window.__capObs = null; }
         window.__captions = [];
-        const cap = document.querySelector('[jsname="dSyhDe"]') || document.querySelector('[aria-label*="aption"]');
-        if (!cap) return "NO_CONTAINER";
-        const seen = new Set();
-        const collect = (root) => {
-            const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-            let n;
-            while (n = tw.nextNode()) {
-                const t = n.textContent.trim();
-                if (t.length >= 3 && t.length <= 300 && !seen.has(t)) {
-                    seen.add(t);
-                    window.__captions.push(t);
+        window.__capSeen = new Set();
+        const container = document.querySelector('[role="region"][aria-label*="убтит" i]') || document.querySelector('[role="region"][aria-label*="aption" i]');
+        if (!container) return "NO_CONTAINER";
+        const collect = () => {
+            const blocks = container.querySelectorAll('.nMcdL');
+            for (const block of blocks) {
+                const textEl = block.querySelector('.ygicle');
+                if (!textEl) continue;
+                const speakerEl = block.querySelector('.NWpY1d');
+                const speaker = speakerEl ? speakerEl.textContent.trim() : "";
+                const t = textEl.textContent.trim();
+                if (t.length >= 3 && t.length <= 500 && !window.__capSeen.has(t)) {
+                    window.__capSeen.add(t);
+                    const line = speaker ? speaker + ": " + t : t;
+                    window.__captions.push(line);
                 }
             }
         };
-        collect(cap);
+        collect();
         const obs = new MutationObserver((muts) => {
             for (const m of muts) {
-                if (m.type === 'characterData') {
-                    const t = m.target.textContent.trim();
-                    if (t.length >= 3 && t.length <= 300 && !seen.has(t)) {
-                        seen.add(t);
-                        window.__captions.push(t);
-                    }
-                } else if (m.type === 'childList') {
+                if (m.type === 'childList') {
                     for (const node of m.addedNodes) {
-                        if (node.nodeType === Node.ELEMENT_NODE) collect(node);
+                        if (node.nodeType === Node.ELEMENT_NODE && node.classList && node.classList.contains('nMcdL')) {
+                            const textEl = node.querySelector('.ygicle');
+                            if (!textEl) continue;
+                            const speakerEl = node.querySelector('.NWpY1d');
+                            const speaker = speakerEl ? speakerEl.textContent.trim() : "";
+                            const t = textEl.textContent.trim();
+                            if (t.length >= 3 && t.length <= 500 && !window.__capSeen.has(t)) {
+                                window.__capSeen.add(t);
+                                const line = speaker ? speaker + ": " + t : t;
+                                window.__captions.push(line);
+                            }
+                        }
                     }
                 }
             }
         });
-        obs.observe(cap, { childList: true, subtree: true, characterData: true });
+        obs.observe(container, { childList: true, subtree: true });
         window.__capObs = obs;
         return "OK";
     }
     """)
+
 def _flush_captions(page, mid, token=None, chat_id=None):
     try:
         arr = page.evaluate("window.__captions || []")
@@ -554,11 +564,12 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             with open(path, "a", encoding="utf-8") as f:
                 f.write("\n".join(arr) + "\n")
             if token and chat_id:
-                send_tg(token, chat_id, "\u270f\ufe0f \u0421\u0443\u0431\u0442\u0438\u0442\u0440\u044b +" + str(len(arr)) + " \u0441\u0442\u0440\u043e\u043a, \u0444\u0430\u0439\u043b: " + path)
+                send_tg(token, chat_id, "📝 Субтитры +" + str(len(arr)) + " строк, файл: " + path)
             return len(arr)
     except Exception as e:
         log("meet", "Caption flush error: " + str(e))
     return 0
+
 
 def _ensure_media_off(page, mid):
     prefixes = ("Выключить ", "Вимкнути ", "Turn off ", "Отключить ")
