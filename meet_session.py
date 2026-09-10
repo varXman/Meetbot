@@ -282,9 +282,18 @@ def _in_call(page):
 
 
 def _click_label(page, labels):
-    """Клик по aria-label / role=button / text. Порядок важен."""
+    """Клик по видимому тексту / aria-label / role=button. Порядок важен."""
     for lab in labels:
-        # 1) exact aria-label (Google Meet диалоги)
+        # 1) Playwright get_by_text — универсальный поиск любого видимого текста
+        try:
+            loc = page.get_by_text(lab, exact=False).first
+            if loc.count() > 0 and loc.is_visible():
+                loc.click(timeout=4000)
+                log("join", "Нажато (text): " + lab)
+                return lab
+        except Exception:
+            pass
+        # 2) exact aria-label
         try:
             loc = page.locator(f'[aria-label="{lab}"]').first
             if loc.count() > 0 and loc.is_visible():
@@ -293,7 +302,7 @@ def _click_label(page, labels):
                 return lab
         except Exception:
             pass
-        # 2) partial aria-label
+        # 3) partial aria-label
         try:
             loc = page.locator(f'[aria-label*="{lab}"]').first
             if loc.count() > 0 and loc.is_visible():
@@ -302,7 +311,7 @@ def _click_label(page, labels):
                 return lab
         except Exception:
             pass
-        # 3) role=button accessible name
+        # 4) role=button accessible name
         try:
             loc = page.get_by_role("button", name=lab, exact=False).first
             if loc.count() > 0 and loc.is_visible():
@@ -311,12 +320,12 @@ def _click_label(page, labels):
                 return lab
         except Exception:
             pass
-        # 4) locator text= (div/button без role)
+        # 5) CSS text locator fallback
         try:
             loc = page.locator(f'text={lab}').first
             if loc.count() > 0 and loc.is_visible():
                 loc.click(timeout=4000)
-                log("join", "Нажато (text): " + lab)
+                log("join", "Нажато (css): " + lab)
                 return lab
         except Exception:
             pass
