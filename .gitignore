@@ -7,3 +7,6 @@ storage/
 config.yaml
 *.log
 __pycache__/
+chrome_profile/
+__pycache__/
+*.pyc
