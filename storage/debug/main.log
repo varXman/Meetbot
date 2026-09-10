@@ -1,8 +1,9 @@
-2026-09-10 17:30:14,246 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
-2026-09-10 17:30:14,246 aiogram.dispatcher INFO Start polling
-2026-09-10 17:30:14,540 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-10 17:30:28,008 aiogram.event INFO Update id=566224794 is not handled. Duration 9 ms by bot id=8779376364
-2026-09-10 17:30:28,008 aiogram.event ERROR Cause exception while process update id=566224794 by bot id=8779376364
+2026-09-10 17:41:26,456 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-10 17:41:26,456 aiogram.dispatcher INFO Start polling
+2026-09-10 17:41:26,747 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-10 17:41:33,104 aiogram.event INFO Update id=566224795 is handled. Duration 67 ms by bot id=8779376364
+2026-09-10 17:41:35,896 aiogram.event INFO Update id=566224796 is not handled. Duration 18 ms by bot id=8779376364
+2026-09-10 17:41:35,897 aiogram.event ERROR Cause exception while process update id=566224796 by bot id=8779376364
 ValueError: too many values to unpack (expected 2)
 Traceback (most recent call last):
   File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
@@ -54,9 +55,12 @@ Traceback (most recent call last):
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     ^^^^^^^
 ValueError: too many values to unpack (expected 2)
-2026-09-10 17:30:44,248 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:31:14 EEST)" (scheduled at 2026-09-10 20:30:44.242613+03:00)
-2026-09-10 17:30:44,252 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:31:14 EEST)" executed successfully
-2026-09-10 17:31:14,246 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:31:44 EEST)" (scheduled at 2026-09-10 20:31:14.242613+03:00)
-2026-09-10 17:31:14,251 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:31:44 EEST)" executed successfully
-2026-09-10 17:31:44,248 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:32:14 EEST)" (scheduled at 2026-09-10 20:31:44.242613+03:00)
-2026-09-10 17:31:44,252 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:32:14 EEST)" executed successfully
+2026-09-10 17:41:56,453 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:42:26 EEST)" (scheduled at 2026-09-10 20:41:56.452589+03:00)
+2026-09-10 17:41:56,458 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:42:26 EEST)" executed successfully
+2026-09-10 17:42:26,453 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:42:56 EEST)" (scheduled at 2026-09-10 20:42:26.452589+03:00)
+2026-09-10 17:42:26,458 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:42:56 EEST)" executed successfully
+2026-09-10 17:42:56,454 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:26 EEST)" (scheduled at 2026-09-10 20:42:56.452589+03:00)
+2026-09-10 17:42:56,460 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:26 EEST)" executed successfully
+2026-09-10 17:43:26,455 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:56 EEST)" (scheduled at 2026-09-10 20:43:26.452589+03:00)
+2026-09-10 17:43:26,460 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:56 EEST)" executed successfully
+2026-09-10 17:43:27,737 aiogram.event INFO Update id=566224797 is handled. Duration 18077 ms by bot id=8779376364
