@@ -1,186 +1,59 @@
-2026-09-10 18:41:30,052 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
-2026-09-10 18:41:30,052 aiogram.dispatcher INFO Start polling
-2026-09-10 18:41:30,102 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-10 18:41:45,017 aiogram.event INFO Update id=566224800 is handled. Duration 106 ms by bot id=8779376364
-2026-09-10 18:41:47,121 aiogram.event INFO Update id=566224801 is not handled. Duration 18 ms by bot id=8779376364
-2026-09-10 18:41:47,121 aiogram.event ERROR Cause exception while process update id=566224801 by bot id=8779376364
-ValueError: too many values to unpack (expected 2)
-Traceback (most recent call last):
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
-    response = await self.feed_update(bot, update, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
-    response = await self.update.wrap_outer_middleware(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<8 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 172, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 164, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 192, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/telegram_bot.py", line 407, in cmd_join
-    ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
-    ^^^^^^^
-ValueError: too many values to unpack (expected 2)
-2026-09-10 18:42:00,050 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:42:30 EEST)" (scheduled at 2026-09-10 21:42:00.048794+03:00)
-2026-09-10 18:42:00,054 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:42:30 EEST)" executed successfully
-2026-09-10 18:42:15,762 aiogram.event INFO Update id=566224802 is handled. Duration 18105 ms by bot id=8779376364
-2026-09-10 18:42:30,050 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:43:00 EEST)" (scheduled at 2026-09-10 21:42:30.048794+03:00)
-2026-09-10 18:42:30,054 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:43:00 EEST)" executed successfully
-2026-09-10 18:42:53,816 aiogram.event INFO Update id=566224803 is handled. Duration 131 ms by bot id=8779376364
-2026-09-10 18:43:00,057 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:43:30 EEST)" (scheduled at 2026-09-10 21:43:00.048794+03:00)
-2026-09-10 18:43:00,061 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:43:30 EEST)" executed successfully
-2026-09-10 18:43:30,056 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:44:00 EEST)" (scheduled at 2026-09-10 21:43:30.048794+03:00)
-2026-09-10 18:43:30,060 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:44:00 EEST)" executed successfully
-2026-09-10 18:43:38,826 aiogram.event INFO Update id=566224804 is not handled. Duration 9 ms by bot id=8779376364
-2026-09-10 18:43:38,826 aiogram.event ERROR Cause exception while process update id=566224804 by bot id=8779376364
-ValueError: too many values to unpack (expected 2)
-Traceback (most recent call last):
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
-    response = await self.feed_update(bot, update, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
-    response = await self.update.wrap_outer_middleware(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<8 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 172, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 164, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 192, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/telegram_bot.py", line 407, in cmd_join
-    ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
-    ^^^^^^^
-ValueError: too many values to unpack (expected 2)
-2026-09-10 18:44:00,051 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:44:30 EEST)" (scheduled at 2026-09-10 21:44:00.048794+03:00)
-2026-09-10 18:44:00,055 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:44:30 EEST)" executed successfully
-2026-09-10 18:44:30,050 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:45:00 EEST)" (scheduled at 2026-09-10 21:44:30.048794+03:00)
-2026-09-10 18:44:30,055 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:45:00 EEST)" executed successfully
-2026-09-10 18:44:37,033 aiogram.event INFO Update id=566224805 is handled. Duration 18058 ms by bot id=8779376364
-2026-09-10 18:45:00,050 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:45:30 EEST)" (scheduled at 2026-09-10 21:45:00.048794+03:00)
-2026-09-10 18:45:00,055 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:45:30 EEST)" executed successfully
-2026-09-10 18:45:27,218 aiogram.event INFO Update id=566224806 is not handled. Duration 10 ms by bot id=8779376364
-2026-09-10 18:45:27,218 aiogram.event ERROR Cause exception while process update id=566224806 by bot id=8779376364
-ValueError: too many values to unpack (expected 2)
-Traceback (most recent call last):
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
-    response = await self.feed_update(bot, update, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
-    response = await self.update.wrap_outer_middleware(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<8 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 172, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 164, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 192, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/telegram_bot.py", line 407, in cmd_join
-    ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
-    ^^^^^^^
-ValueError: too many values to unpack (expected 2)
-2026-09-10 18:45:30,051 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:46:00 EEST)" (scheduled at 2026-09-10 21:45:30.048794+03:00)
-2026-09-10 18:45:30,060 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:46:00 EEST)" executed successfully
-2026-09-10 18:46:00,051 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:46:30 EEST)" (scheduled at 2026-09-10 21:46:00.048794+03:00)
-2026-09-10 18:46:00,057 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:46:30 EEST)" executed successfully
-2026-09-10 18:46:30,051 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:47:00 EEST)" (scheduled at 2026-09-10 21:46:30.048794+03:00)
-2026-09-10 18:46:30,054 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:47:00 EEST)" executed successfully
+2026-09-10 18:52:02,196 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-10 18:52:02,196 aiogram.dispatcher INFO Start polling
+2026-09-10 18:52:02,486 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-10 18:52:06,530 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:06,531 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-10 18:52:11,794 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:11,795 aiogram.dispatcher WARNING Sleep for 1.300418 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-10 18:52:17,733 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:17,733 aiogram.dispatcher WARNING Sleep for 1.798498 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-10 18:52:24,829 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:24,829 aiogram.dispatcher WARNING Sleep for 2.209360 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-10 18:52:30,083 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:30,083 aiogram.dispatcher WARNING Sleep for 2.719089 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-10 18:52:32,195 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:53:02 EEST)" (scheduled at 2026-09-10 21:52:32.192319+03:00)
+2026-09-10 18:52:32,199 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:53:02 EEST)" executed successfully
+2026-09-10 18:52:39,894 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:39,894 aiogram.dispatcher WARNING Sleep for 3.493084 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-10 18:52:48,415 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:48,415 aiogram.dispatcher WARNING Sleep for 4.702474 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-10 18:52:58,210 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:52:58,211 aiogram.dispatcher WARNING Sleep for 4.929416 seconds and try again... (tryings = 7, bot id = 8779376364)
+2026-09-10 18:53:02,197 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:53:32 EEST)" (scheduled at 2026-09-10 21:53:02.192319+03:00)
+2026-09-10 18:53:02,202 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:53:32 EEST)" executed successfully
+2026-09-10 18:53:04,169 aiogram.dispatcher INFO Connection established (tryings = 8, bot id = 8779376364)
+2026-09-10 18:53:04,251 aiogram.event INFO Update id=566224807 is handled. Duration 81 ms by bot id=8779376364
+2026-09-10 18:53:08,176 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:08,176 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-10 18:53:09,188 aiogram.dispatcher INFO Connection established (tryings = 1, bot id = 8779376364)
+2026-09-10 18:53:09,231 aiogram.event INFO Update id=566224808 is handled. Duration 42 ms by bot id=8779376364
+2026-09-10 18:53:12,209 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:12,209 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-10 18:53:17,248 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:17,248 aiogram.dispatcher WARNING Sleep for 1.362831 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-10 18:53:23,249 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:23,249 aiogram.dispatcher WARNING Sleep for 1.648896 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-10 18:53:29,976 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:29,977 aiogram.dispatcher WARNING Sleep for 2.224352 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-10 18:53:32,194 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:54:02 EEST)" (scheduled at 2026-09-10 21:53:32.192319+03:00)
+2026-09-10 18:53:32,199 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:54:02 EEST)" executed successfully
+2026-09-10 18:53:37,921 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:37,922 aiogram.dispatcher WARNING Sleep for 2.921752 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-10 18:53:44,297 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:44,297 aiogram.dispatcher WARNING Sleep for 3.696335 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-10 18:53:52,333 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:53:52,333 aiogram.dispatcher WARNING Sleep for 4.686511 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-10 18:54:01,929 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:54:01,929 aiogram.dispatcher WARNING Sleep for 5.062701 seconds and try again... (tryings = 7, bot id = 8779376364)
+2026-09-10 18:54:02,192 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:54:32 EEST)" (scheduled at 2026-09-10 21:54:02.192319+03:00)
+2026-09-10 18:54:02,197 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:54:32 EEST)" executed successfully
+2026-09-10 18:54:11,901 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:54:11,901 aiogram.dispatcher WARNING Sleep for 5.070689 seconds and try again... (tryings = 8, bot id = 8779376364)
+2026-09-10 18:54:21,988 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:54:21,988 aiogram.dispatcher WARNING Sleep for 5.054753 seconds and try again... (tryings = 9, bot id = 8779376364)
+2026-09-10 18:54:31,992 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:54:31,992 aiogram.dispatcher WARNING Sleep for 4.914564 seconds and try again... (tryings = 10, bot id = 8779376364)
+2026-09-10 18:54:32,193 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:55:02 EEST)" (scheduled at 2026-09-10 21:54:32.192319+03:00)
+2026-09-10 18:54:32,196 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 21:55:02 EEST)" executed successfully
+2026-09-10 18:54:42,022 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-10 18:54:42,022 aiogram.dispatcher WARNING Sleep for 5.069904 seconds and try again... (tryings = 11, bot id = 8779376364)

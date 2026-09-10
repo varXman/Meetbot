@@ -1,0 +1,7 @@
+
+=== старт 2026-09-10 21:53:12 (Киев), sid=None ===
+21:53:13 [INFO] [manual_1789066392] Открываю https://meet.google.com/zyi-woav-dme (sid=None, duration=3.0 мин)
+21:53:36 [INFO] [prep] mic выключен
+21:53:36 [INFO] [prep] cam выключен
+21:53:37 [INFO] [manual_1789066392] Отправлены Ctrl+E и Ctrl+D (fallback)
+21:54:05 [INFO] [join] Нажато (get_text): Присоединиться
