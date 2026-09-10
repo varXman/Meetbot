@@ -402,7 +402,7 @@ def _scan_roster(page, text=None):
 
     # Очистка UI-артефактов
     _skip_ui = ("Показать", "Вы", "Ви", "К началу", "До початку", "Присоединиться", "Подключиться")
-    names = [n for n in names if n and n.strip() and not any(s in n for s in _skip_ui)]
+    names = {n for n in names if n and n.strip() and not any(s in n for s in _skip_ui)}
     return names, org_present, org_name
 
 
