@@ -1,9 +1,16 @@
-2026-09-10 19:14:01,776 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
-2026-09-10 19:14:01,777 aiogram.dispatcher INFO Start polling
-2026-09-10 19:14:02,068 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-10 19:14:18,083 aiogram.event INFO Update id=566224814 is handled. Duration 85 ms by bot id=8779376364
-2026-09-10 19:14:20,557 aiogram.event INFO Update id=566224815 is not handled. Duration 9 ms by bot id=8779376364
-2026-09-10 19:14:20,557 aiogram.event ERROR Cause exception while process update id=566224815 by bot id=8779376364
+2026-09-10 19:34:18,666 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-10 19:34:18,667 aiogram.dispatcher INFO Start polling
+2026-09-10 19:34:18,708 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-10 19:34:48,674 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:35:18 EEST)" (scheduled at 2026-09-10 22:34:48.663218+03:00)
+2026-09-10 19:34:48,679 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:35:18 EEST)" executed successfully
+2026-09-10 19:35:18,668 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:35:48 EEST)" (scheduled at 2026-09-10 22:35:18.663218+03:00)
+2026-09-10 19:35:18,671 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:35:48 EEST)" executed successfully
+2026-09-10 19:35:48,675 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:36:18 EEST)" (scheduled at 2026-09-10 22:35:48.663218+03:00)
+2026-09-10 19:35:48,685 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:36:18 EEST)" executed successfully
+2026-09-10 19:35:56,625 aiogram.event INFO Update id=566224822 is not handled. Duration 1 ms by bot id=8779376364
+2026-09-10 19:36:00,787 aiogram.event INFO Update id=566224823 is handled. Duration 74 ms by bot id=8779376364
+2026-09-10 19:36:03,423 aiogram.event INFO Update id=566224824 is not handled. Duration 18 ms by bot id=8779376364
+2026-09-10 19:36:03,423 aiogram.event ERROR Cause exception while process update id=566224824 by bot id=8779376364
 ValueError: too many values to unpack (expected 2)
 Traceback (most recent call last):
   File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
@@ -55,80 +62,15 @@ Traceback (most recent call last):
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     ^^^^^^^
 ValueError: too many values to unpack (expected 2)
-2026-09-10 19:14:31,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:15:01 EEST)" (scheduled at 2026-09-10 22:14:31.772093+03:00)
-2026-09-10 19:14:31,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:15:01 EEST)" executed successfully
-2026-09-10 19:15:01,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:15:31 EEST)" (scheduled at 2026-09-10 22:15:01.772093+03:00)
-2026-09-10 19:15:01,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:15:31 EEST)" executed successfully
-2026-09-10 19:15:31,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:16:01 EEST)" (scheduled at 2026-09-10 22:15:31.772093+03:00)
-2026-09-10 19:15:31,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:16:01 EEST)" executed successfully
-2026-09-10 19:16:01,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:16:31 EEST)" (scheduled at 2026-09-10 22:16:01.772093+03:00)
-2026-09-10 19:16:01,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:16:31 EEST)" executed successfully
-2026-09-10 19:16:04,923 aiogram.event INFO Update id=566224816 is handled. Duration 18072 ms by bot id=8779376364
-2026-09-10 19:16:31,777 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:17:01 EEST)" (scheduled at 2026-09-10 22:16:31.772093+03:00)
-2026-09-10 19:16:31,782 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:17:01 EEST)" executed successfully
-2026-09-10 19:17:01,777 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:17:31 EEST)" (scheduled at 2026-09-10 22:17:01.772093+03:00)
-2026-09-10 19:17:01,781 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:17:31 EEST)" executed successfully
-2026-09-10 19:17:14,310 aiogram.event INFO Update id=566224817 is not handled. Duration 10 ms by bot id=8779376364
-2026-09-10 19:17:14,310 aiogram.event ERROR Cause exception while process update id=566224817 by bot id=8779376364
-ValueError: too many values to unpack (expected 2)
-Traceback (most recent call last):
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
-    response = await self.feed_update(bot, update, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
-    response = await self.update.wrap_outer_middleware(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<8 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 172, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 164, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-    )
-    ^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 192, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "/opt/meet-bot/telegram_bot.py", line 407, in cmd_join
-    ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
-    ^^^^^^^
-ValueError: too many values to unpack (expected 2)
-2026-09-10 19:17:31,776 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:18:01 EEST)" (scheduled at 2026-09-10 22:17:31.772093+03:00)
-2026-09-10 19:17:31,785 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:18:01 EEST)" executed successfully
-2026-09-10 19:18:01,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:18:31 EEST)" (scheduled at 2026-09-10 22:18:01.772093+03:00)
-2026-09-10 19:18:01,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:18:31 EEST)" executed successfully
-2026-09-10 19:18:11,628 aiogram.event INFO Update id=566224818 is handled. Duration 18082 ms by bot id=8779376364
-2026-09-10 19:18:31,781 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:19:01 EEST)" (scheduled at 2026-09-10 22:18:31.772093+03:00)
-2026-09-10 19:18:31,785 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:19:01 EEST)" executed successfully
-2026-09-10 19:19:01,781 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:19:31 EEST)" (scheduled at 2026-09-10 22:19:01.772093+03:00)
-2026-09-10 19:19:01,787 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:19:31 EEST)" executed successfully
-2026-09-10 19:19:31,780 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:20:01 EEST)" (scheduled at 2026-09-10 22:19:31.772093+03:00)
-2026-09-10 19:19:31,784 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:20:01 EEST)" executed successfully
+2026-09-10 19:36:18,668 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:36:48 EEST)" (scheduled at 2026-09-10 22:36:18.663218+03:00)
+2026-09-10 19:36:18,672 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:36:48 EEST)" executed successfully
+2026-09-10 19:36:48,667 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:37:18 EEST)" (scheduled at 2026-09-10 22:36:48.663218+03:00)
+2026-09-10 19:36:48,674 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:37:18 EEST)" executed successfully
+2026-09-10 19:37:18,666 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:37:48 EEST)" (scheduled at 2026-09-10 22:37:18.663218+03:00)
+2026-09-10 19:37:18,674 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:37:48 EEST)" executed successfully
+2026-09-10 19:37:48,664 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:38:18 EEST)" (scheduled at 2026-09-10 22:37:48.663218+03:00)
+2026-09-10 19:37:48,667 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:38:18 EEST)" executed successfully
+2026-09-10 19:38:18,668 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:38:48 EEST)" (scheduled at 2026-09-10 22:38:18.663218+03:00)
+2026-09-10 19:38:18,671 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:38:48 EEST)" executed successfully
+2026-09-10 19:38:48,664 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:39:18 EEST)" (scheduled at 2026-09-10 22:38:48.663218+03:00)
+2026-09-10 19:38:48,669 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 22:39:18 EEST)" executed successfully
