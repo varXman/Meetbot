@@ -597,6 +597,13 @@ def _wait_and_join(page, mid):
             clicked = _click_label(page, JOIN_ALSO_LABELS)
             if clicked is None:
                 clicked = _click_label(page, JOIN_PRIMARY_LABELS)
+                    if clicked:
+                        page.wait_for_timeout(3000)
+                        clicked2 = _click_label(page, JOIN_ALSO_LABELS)
+                        if not clicked2:
+                            clicked2 = _click_label(page, SWITCH_DEVICE_LABELS)
+                        if clicked2:
+                            clicked = clicked2
             if clicked:
                 confirm_deadline = time.time() + JOIN_CONFIRM_SEC
         else:
