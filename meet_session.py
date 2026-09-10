@@ -405,7 +405,20 @@ def _scan_roster(page, text=None):
 
 # ---------- Вход ----------
 
+def _ensure_media_off(page, mid):
+    for label in ("Turn off camera", "Выключить камеру", "Вимкнути камеру",
+                  "Turn off microphone", "Выключить микрофон", "Вимкнути мікрофон"):
+        try:
+            btn = page.locator(f"[aria-label*=\'{label}\']").first
+            if btn.is_visible(timeout=1200):
+                btn.click(timeout=2000)
+                log(mid, f"Отключил: {label}")
+        except Exception:
+            pass
+
+
 def _wait_and_join(page, mid):
+    _ensure_media_off(page, mid)
     """Терпеливый вход. Возвращает (rc, причина)."""
     started = time.time()
     clicked = None

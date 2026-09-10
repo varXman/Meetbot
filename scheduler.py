@@ -28,7 +28,7 @@ STORAGE = os.path.join(BASE_DIR, "storage")
 DOW_EN = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 SCAN_SECONDS = 30      # как часто проверяем окна
-MIN_GAP_SEC = 90       # минимальный интервал между попытками по одной записи
+MIN_GAP_SEC = 40       # минимальный интервал между попытками по одной записи
 BUSY_NOTICE_GAP = 600  # не чаще раза в 10 мин напоминаем «занято»
 END_MIN_SEC = 60       # если окну осталось < минуты — про «занято» не пишем
 
