@@ -505,7 +505,7 @@ def _enable_captions(page, mid):
 
 
 def _inject_caption_collector(page):
-    page.evaluate(r"""
+    return page.evaluate(r"""
     () => {
         if (window.__capObs) { window.__capObs.disconnect(); window.__capObs = null; }
         window.__captions = [];
@@ -556,8 +556,8 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             if token and chat_id:
                 send_tg(token, chat_id, "\u270f\ufe0f \u0421\u0443\u0431\u0442\u0438\u0442\u0440\u044b +" + str(len(arr)) + " \u0441\u0442\u0440\u043e\u043a, \u0444\u0430\u0439\u043b: " + path)
             return len(arr)
-    except Exception:
-        pass
+    except Exception as e:
+        log("meet", "Caption flush error: " + str(e))
     return 0
 
 def _ensure_media_off(page, mid):
@@ -745,8 +745,22 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
             log(prefix, "Всего: " + str(total) + ", уникальных имён: " + str(len(names)))
             log(prefix, "Организатор: " + str(organizer or "не найден"))
             log(prefix, "Имена: " + ", ".join(names_list))
-            _enable_captions(page, prefix)
-            _inject_caption_collector(page)
+            cap_ok = _enable_captions(page, prefix)
+
+            log(prefix, 'Captions enabled: ' + str(cap_ok))
+
+            for attempt in range(5):
+
+                res = _inject_caption_collector(page)
+
+                log(prefix, 'Caption collector attempt ' + str(attempt + 1) + ': ' + str(res))
+
+                if res == 'OK':
+
+                    break
+
+                time.sleep(3)
+
 
 
             msg = "✅ Вошёл во встречу в " + now_kiev() + "\n👥 Участников: " + str(total)
