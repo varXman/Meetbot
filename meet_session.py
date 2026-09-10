@@ -282,24 +282,45 @@ def _in_call(page):
 
 
 def _click_label(page, labels):
+    """Клик по aria-label / role=button / text. Порядок важен."""
     for lab in labels:
-        for getter in (
-            page.get_by_role("button", name=lab, exact=False),
-            page.get_by_text(lab, exact=False),
-        ):
-            try:
-                loc = getter.first
-                if loc.count() == 0:
-                    continue
-                if not loc.is_visible():
-                    continue
+        # 1) exact aria-label (Google Meet диалоги)
+        try:
+            loc = page.locator(f'[aria-label="{lab}"]').first
+            if loc.count() > 0 and loc.is_visible():
                 loc.click(timeout=4000)
-                log("join", "Нажато: " + lab)
+                log("join", "Нажато (aria): " + lab)
                 return lab
-            except Exception:
-                continue
+        except Exception:
+            pass
+        # 2) partial aria-label
+        try:
+            loc = page.locator(f'[aria-label*="{lab}"]').first
+            if loc.count() > 0 and loc.is_visible():
+                loc.click(timeout=4000)
+                log("join", "Нажато (aria*): " + lab)
+                return lab
+        except Exception:
+            pass
+        # 3) role=button accessible name
+        try:
+            loc = page.get_by_role("button", name=lab, exact=False).first
+            if loc.count() > 0 and loc.is_visible():
+                loc.click(timeout=4000)
+                log("join", "Нажато (role): " + lab)
+                return lab
+        except Exception:
+            pass
+        # 4) locator text= (div/button без role)
+        try:
+            loc = page.locator(f'text={lab}').first
+            if loc.count() > 0 and loc.is_visible():
+                loc.click(timeout=4000)
+                log("join", "Нажато (text): " + lab)
+                return lab
+        except Exception:
+            pass
     return None
-
 
 def _mute_mic_cam(page, stage):
     for sel, name in [
