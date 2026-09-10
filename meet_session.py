@@ -543,81 +543,44 @@ def _inject_caption_collector(page):
         const kws = ['субтитри','субтитры','captions','subtitles','caption','subtitle'];
         function findRegion() {
             for (const el of document.querySelectorAll('div[role="region"]')) {
-                const al = (el.getAttribute('aria-label')||'').toLowerCase();
+                const al = (el.getAttribute('aria-label') || '').toLowerCase();
                 if (kws.some(k => al.includes(k))) return el;
             }
             return null;
         }
-        const region = findRegion();
-        if (!region) return "NO_CONTAINER";
+        const r = findRegion();
+        if (!r) return "NO_CONTAINER";
         window.__captions = [];
         window.__capSeen = new Set();
-        window.__capLastFlush = 0;
-        function pushLine(speaker, text) {
-            if (!text) return;
-            const t = text.trim();
-            if (!t) return;
-            if (window.__capSeen.has(t)) return;
-            window.__capSeen.add(t);
-            const line = (speaker ? speaker + ": " : "") + t;
-            window.__captions.push(line);
+        function addBlock(node) {
+            if (!node.classList || !node.classList.contains('nMcdL')) return;
+            const nameEl = node.querySelector('.NWpY1d');
+            const textEl = node.querySelector('.ygicle');
+            if (!textEl) return;
+            const name = nameEl ? nameEl.textContent.trim() : '';
+            const text = textEl.textContent.trim();
+            if (!text || text.length < 10) return;
+            if (window.__capSeen.has(text)) return;
+            window.__capSeen.add(text);
+            window.__captions.push((name ? name + ': ' : '') + text);
         }
-        function collectFromRegion() {
-            // layout A: blocks .nMcdL
-            for (const block of region.querySelectorAll('.nMcdL')) {
-                const nameEl = block.querySelector('.NWpY1d');
-                const textEl = block.querySelector('.ygicle');
-                const speaker = nameEl ? nameEl.textContent.trim() : "";
-                const text = textEl ? textEl.textContent.trim() : "";
-                if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
-            }
-            // layout B: direct .ygicle without .nMcdL
-            for (const el of region.querySelectorAll('.ygicle')) {
-                if (el.closest('.nMcdL')) continue;
-                const txt = el.textContent.trim();
-                if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
-            }
-        }
-        collectFromRegion();
+        r.querySelectorAll('.nMcdL').forEach(addBlock);
         const obs = new MutationObserver(muts => {
             for (const m of muts) {
                 for (const node of m.addedNodes) {
-                    if (node.nodeType !== 1) continue;
-                    if (node.matches && node.matches('.nMcdL')) {
-                        const nameEl = node.querySelector('.NWpY1d');
-                        const textEl = node.querySelector('.ygicle');
-                        const speaker = nameEl ? nameEl.textContent.trim() : "";
-                        const text = textEl ? textEl.textContent.trim() : "";
-                        if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
-                    } else if (node.matches && node.matches('.ygicle')) {
-                        if (node.closest('.nMcdL')) continue;
-                        const txt = node.textContent.trim();
-                        if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
-                    } else if (node.querySelectorAll) {
-                        for (const block of node.querySelectorAll('.nMcdL')) {
-                            const nameEl = block.querySelector('.NWpY1d');
-                            const textEl = block.querySelector('.ygicle');
-                            const speaker = nameEl ? nameEl.textContent.trim() : "";
-                            const text = textEl ? textEl.textContent.trim() : "";
-                            if (text.length >= 10 && text.length <= 3000) pushLine(speaker, text);
-                        }
-                        for (const el of node.querySelectorAll('.ygicle')) {
-                            if (el.closest('.nMcdL')) continue;
-                            const txt = el.textContent.trim();
-                            if (txt.length >= 20 && txt.length <= 3000) pushLine("", txt);
-                        }
+                    if (node.nodeType === 1 && node.classList && node.classList.contains('nMcdL')) {
+                        addBlock(node);
                     }
                 }
             }
         });
-        obs.observe(region, { childList: true, subtree: true });
+        obs.observe(r, { childList: true, subtree: true });
         window.__capObserver = obs;
         return "OK";
     }""")
     return result
 
 def _flush_captions(page, mid, token=None, chat_id=None):
-    import os, requests
     try:
         lines = page.evaluate("""() => {
             const out = window.__captions || [];
@@ -627,19 +590,19 @@ def _flush_captions(page, mid, token=None, chat_id=None):
         if not lines:
             return
         filtered = []
-        noise = {"zoom_in","open_in_new","open_in_full","fullscreen","fullscreen_exit",
-                 "present_to_all","stop_presenting","more_vert","expand_more","chat","people",
+        noise = {"ещё","чел","mes.","est.","so?","yep","zoom_in","open_in_new","open_in_full",
+                 "fullscreen","fullscreen_exit","more_vert","expand_more","chat","people",
                  "schedule","info","call_end","mic","videocam","videocam_off","mic_off",
-                 "push_pin","screen_share","stop_screen_share","closed_caption","closed_caption_off",
-                 "present now","est.","mes."}
+                 "push_pin","screen_share","stop_screen_share","closed_caption",
+                 "closed_caption_off","present now","present_to_all","stop_presenting"}
         for l in lines:
             txt = l.split(":", 1)[1] if ":" in l else l
-            t2 = txt.strip().lower().replace(" ","_").replace(":","")
-            if t2 in noise:
+            tlow = txt.strip().lower()
+            if any(n in tlow for n in noise):
                 continue
             if len(txt.strip()) < 10:
                 continue
-            if all(c in "abcdefghijklmnopqrstuvwxyz_0123456789" for c in t2):
+            if all(c in "abcdefghijklmnopqrstuvwxyz_0123456789" for c in tlow.replace(" ", "_")):
                 if len(txt.strip()) <= 20:
                     continue
             filtered.append(l)
@@ -652,10 +615,9 @@ def _flush_captions(page, mid, token=None, chat_id=None):
         logger.info("[cap] flush %s lines to %s", len(filtered), fn)
         if token and chat_id:
             try:
-                txt = f"[subs] +{len(filtered)} строк -> {fn}"
                 requests.post(
                     f"https://api.telegram.org/bot{token}/sendMessage",
-                    json={"chat_id": chat_id, "text": txt},
+                    json={"chat_id": chat_id, "text": f"[subs] +{len(filtered)} строк -> {fn}"},
                     timeout=15,
                 )
             except Exception as e:
