@@ -1,0 +1,9 @@
+
+=== старт 2026-09-10 20:17:07 (Киев), sid=None ===
+20:17:07 [INFO] [manual_1789060627] Открываю https://meet.google.com/zyi-woav-dme (sid=None, duration=3.0 мин)
+20:17:30 [INFO] [prep] mic выключен
+20:17:30 [INFO] [prep] cam выключен
+20:17:30 [INFO] [manual_1789060627] Отправлены Ctrl+E и Ctrl+D (fallback)
+20:17:54 [INFO] [join] Нажато (text): Присоединиться
+20:18:51 [INFO] [debug] Скриншот и HTML сохранены: /opt/meet-bot/storage/debug/manual_1789060627_20260910_201851_join_failed.png
+20:18:51 [INFO] [manual_1789060627] Вход: rc=1 — Кнопка «Присоединиться» нажата, но вход не подтвердился
