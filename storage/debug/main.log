@@ -64,3 +64,67 @@ ValueError: too many values to unpack (expected 2)
 2026-09-10 17:43:26,455 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:56 EEST)" (scheduled at 2026-09-10 20:43:26.452589+03:00)
 2026-09-10 17:43:26,460 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:43:56 EEST)" executed successfully
 2026-09-10 17:43:27,737 aiogram.event INFO Update id=566224797 is handled. Duration 18077 ms by bot id=8779376364
+2026-09-10 17:43:56,459 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:44:26 EEST)" (scheduled at 2026-09-10 20:43:56.452589+03:00)
+2026-09-10 17:43:56,464 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:44:26 EEST)" executed successfully
+2026-09-10 17:44:16,474 aiogram.event INFO Update id=566224798 is not handled. Duration 1 ms by bot id=8779376364
+2026-09-10 17:44:26,457 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:44:56 EEST)" (scheduled at 2026-09-10 20:44:26.452589+03:00)
+2026-09-10 17:44:26,462 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:44:56 EEST)" executed successfully
+2026-09-10 17:44:34,042 aiogram.event INFO Update id=566224799 is not handled. Duration 9 ms by bot id=8779376364
+2026-09-10 17:44:34,042 aiogram.event ERROR Cause exception while process update id=566224799 by bot id=8779376364
+ValueError: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/fsm/middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 172, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 164, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/router.py", line 192, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/event/handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/opt/meet-bot/telegram_bot.py", line 407, in cmd_join
+    ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
+    ^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2026-09-10 17:44:56,455 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:45:26 EEST)" (scheduled at 2026-09-10 20:44:56.452589+03:00)
+2026-09-10 17:44:56,460 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:45:26 EEST)" executed successfully
+2026-09-10 17:45:26,453 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:45:56 EEST)" (scheduled at 2026-09-10 20:45:26.452589+03:00)
+2026-09-10 17:45:26,458 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:45:56 EEST)" executed successfully
+2026-09-10 17:45:56,455 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:46:26 EEST)" (scheduled at 2026-09-10 20:45:56.452589+03:00)
+2026-09-10 17:45:56,459 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-10 20:46:26 EEST)" executed successfully
