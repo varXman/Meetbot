@@ -311,21 +311,25 @@ def _click_label(page, labels):
                 return lab
         except Exception:
             pass
-        # 4) get_by_text (modern Playwright API)
+        # 3.5) JS click directly on button by textContent (bypasses pointer-events:none inner spans)
         try:
-            loc = page.get_by_text(lab, exact=False).first
-            if loc.count() > 0 and loc.is_visible():
-                loc.click(timeout=4000)
-                log("join", "Нажато (get_text): " + lab)
+            js = """(t) => {
+                for (const el of document.querySelectorAll('button, [role="button"]')) {
+                    if (el.textContent.trim().indexOf(t) !== -1) { el.click(); return true; }
+                }
+                return false;
+            }"""
+            if page.evaluate(js, lab):
+                log("join", "Нажато (js): " + lab)
                 return lab
         except Exception:
             pass
-        # 5) button / div[role=button] via :has-text (for pointer-events:none inner spans)
+        # 4) locator text= (div/button без role)
         try:
-            loc = page.locator(f'button:has-text("{lab}")').first
+            loc = page.locator(f'text={lab}').first
             if loc.count() > 0 and loc.is_visible():
                 loc.click(timeout=4000)
-                log("join", "Нажато (btn-has-text): " + lab)
+                log("join", "Нажато (text): " + lab)
                 return lab
         except Exception:
             pass
