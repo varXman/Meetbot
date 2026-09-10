@@ -1,0 +1,52 @@
+telegram:
+  token: 8779376364:AAFl0IufvHveC8sq5BZndGnqPzHLSgWCo5A
+  chat_id: '173102439'
+meetings:
+- id: ukrdil
+  title: Українське ділове мовлення
+  url: https://meet.google.com/mux-fnkn-ecy
+- id: pdr
+  title: Правило дорожнього руху
+  url: https://meet.google.com/hdq-trcm-prx
+- id: galuz_ekon
+  title: Основи галузевої економіки
+  url: https://meet.google.com/nyb-ckug-gcw
+- id: ohorona
+  title: Охорона праці
+  url: https://meet.google.com/kjx-wxpy-yfy
+- id: materialy
+  title: Матеріалознавство
+  url: https://meet.google.com/fpt-hokc-zgi
+- id: spec_tech
+  title: Спецтехнологія
+  url: https://meet.google.com/bfu-mgdr-fdp
+- id: ukrdil2
+  title: Українська ділова мова
+  url: https://meet.google.com/wxe-qtbw-psc
+- id: elektro
+  title: Електротехніка
+  url: https://meet.google.com/mkk-dufr-bxv
+- id: zakhyst
+  title: Захист України
+  url: https://meet.google.com/ksu-mghm-gkv
+- id: bud_kresl
+  title: Будівельне креслення
+  url: https://meet.google.com/uvh-xepm-dsb
+- id: trud_zakon
+  title: Основи трудового законодавства
+  url: https://meet.google.com/rwv-ahpf-abf
+- id: inf_tech
+  title: Інформаційні технології
+  url: https://meet.google.com/uve-qkwy-xqw
+- id: anhliyska
+  title: Англійська
+  url: https://meet.google.com/wks-zvyt-xrc
+- id: fizkultura
+  title: ФІЗИЧНА КУЛЬТУРА
+  url: https://meet.google.com/baw-wpsz-scr
+schedule:
+- meeting: spec_tech
+  time: '12:20'
+  duration: 35
+  sid: 7fe5
+  date: '2026-09-10'
