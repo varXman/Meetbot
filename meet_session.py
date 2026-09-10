@@ -143,6 +143,16 @@ JOIN_PRIMARY_LABELS = [
     "Попросить присоединиться", "Попросити приєднатися", "Ask to join",
 ]
 
+SWITCH_DEVICE_LABELS = [
+    "Присоединиться также на этом устройстве",
+    "Приєднатися також на цьому пристрої",
+    "Подключиться также на этом устройстве",
+    "Join also on this device",
+    "Use this device also",
+    "Присоединиться как ещё один участник",
+    "Join as an additional participant",
+]
+
 IN_CALL_SELECTORS = [
     "button[jsname='CQylAd']",
     "button[aria-label*='покинуть' i]",
@@ -434,37 +444,45 @@ def _enable_captions(page, mid):
 
 
 def _inject_caption_collector(page):
-    js = r'''
+    page.evaluate(r"""
     () => {
-        if (window.__capObs) return;
+        if (window.__capObs) { window.__capObs.disconnect(); window.__capObs = null; }
         window.__captions = [];
-        const isCap = (n) => {
-            if (!n || n.nodeType !== 1) return false;
-            const t = (n.innerText || n.textContent || "").trim();
-            if (!t || t.length < 3 || t.length > 300) return false;
-            const tag = n.tagName.toLowerCase();
-            if (['button','svg','path','img','video','input','style','script'].includes(tag)) return false;
-            if (n.children && n.children.length > 2) return false;
-            if (n.closest && (n.closest('[data-participant-id]') || n.closest('[role=\"listitem\"]'))) return false;
-            return true;
+        const cap = document.querySelector('[jsname="dSyhDe"]') || document.querySelector('[aria-label*="aption"]');
+        if (!cap) return "NO_CONTAINER";
+        const seen = new Set();
+        const collect = (root) => {
+            const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+            let n;
+            while (n = tw.nextNode()) {
+                const t = n.textContent.trim();
+                if (t.length >= 3 && t.length <= 300 && !seen.has(t)) {
+                    seen.add(t);
+                    window.__captions.push(t);
+                }
+            }
         };
+        collect(cap);
         const obs = new MutationObserver((muts) => {
             for (const m of muts) {
-                for (const n of m.addedNodes) {
-                    if (isCap(n)) window.__captions.push(n.innerText.trim());
+                if (m.type === 'characterData') {
+                    const t = m.target.textContent.trim();
+                    if (t.length >= 3 && t.length <= 300 && !seen.has(t)) {
+                        seen.add(t);
+                        window.__captions.push(t);
+                    }
+                } else if (m.type === 'childList') {
+                    for (const node of m.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) collect(node);
+                    }
                 }
             }
         });
-        obs.observe(document.body, { childList: true, subtree: true });
+        obs.observe(cap, { childList: true, subtree: true, characterData: true });
         window.__capObs = obs;
+        return "OK";
     }
-    '''
-    try:
-        page.evaluate(js)
-    except Exception:
-        pass
-
-
+    """)
 def _flush_captions(page, mid, token=None, chat_id=None):
     try:
         arr = page.evaluate("window.__captions || []")
@@ -518,6 +536,7 @@ def _wait_and_join(page, mid):
     """Терпеливый вход. Возвращает (rc, причина)."""
     started = time.time()
     clicked = None
+    switch_clicked = None
     confirm_deadline = None
 
     while True:
@@ -554,6 +573,11 @@ def _wait_and_join(page, mid):
             if _match(text, QUEUED_MARKERS):
                 confirm_deadline = max(confirm_deadline, time.time() + QUEUED_WAIT_SEC)
                 log("join", "Мы в очереди на допуск организатором — жду")
+            if not switch_clicked:
+                switch_clicked = _click_label(page, SWITCH_DEVICE_LABELS)
+                if switch_clicked:
+                    confirm_deadline = time.time() + JOIN_CONFIRM_SEC
+                    log("join", "Switch pressed: " + switch_clicked)
             if time.time() > confirm_deadline:
                 if _match(text, NOBODY_MARKERS):
                     return RC_SKIP_NOBODY, "После клика комната оказалась пустой"

@@ -217,11 +217,12 @@ def status_view(cfg):
     if not running:
         lines.append("Активных сессий нет.")
     else:
-        for mid, meta in running.items():
+        for meta in running:
+            mid = meta["id"]
             lines.append(
                 f"▶️ <code>{mid}</code> — {html.escape(meeting_title(cfg, mid))}\n   в сессии {meta['elapsed']}"
             )
-    rows = [[InlineKeyboardButton(text=f"🛑 Стоп {mid}", callback_data="stop:" + mid)] for mid in running]
+    rows = [[InlineKeyboardButton(text=f"🛑 Стоп {meta['id']}", callback_data="stop:" + meta["id"])] for meta in running]
     rows.append([InlineKeyboardButton(text="🛑 Стоп все", callback_data="stopall")])
     return "\n".join(lines), InlineKeyboardMarkup(inline_keyboard=rows)
 

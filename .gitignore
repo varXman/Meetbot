@@ -1,5 +1,4 @@
-__pycache__/
-chrome_profile/
-storage/debug/
+storage/
+config.yaml
 *.log
-*.flag
+__pycache__/
