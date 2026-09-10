@@ -336,20 +336,47 @@ def _click_label(page, labels):
     return None
 
 def _mute_mic_cam(page, stage):
-    for sel, name in [
-        ("[aria-label*='микрофон' i], [aria-label*='microphone' i], [aria-label*='мікрофон' i]", "mic"),
-        ("[aria-label*='камера' i], [aria-label*='camera' i], [aria-label*='камеру' i]", "cam"),
+    for sel, name, js_kw in [
+        ("[aria-label*='микрофон' i], [aria-label*='microphone' i], [aria-label*='мікрофон' i]", "mic", "микрофон"),
+        ("[aria-label*='камера' i], [aria-label*='camera' i], [aria-label*='камеру' i]", "cam", "камера"),
     ]:
+        done = False
+        # 1) Playwright aria-label click
         try:
             el = page.locator(sel).first
-            if el.count() == 0:
+            if el.count() > 0:
+                pressed = el.get_attribute("aria-pressed")
+                if pressed == "true" or pressed is None:
+                    el.click(timeout=2500)
+                done = True
+                log(stage, name + " выключен")
                 continue
-            pressed = el.get_attribute("aria-pressed")
-            if pressed == "true" or pressed is None:
-                el.click(timeout=2500)
-            log(stage, name + " выключен")
         except Exception:
             pass
+        # 2) JS fallback (handles dynamic toolbar)
+        try:
+            js = """(kw) => {
+                const a = Array.from(document.querySelectorAll('button, [role="button"]'));
+                const el = a.find(b => b.getAttribute('aria-label') && b.getAttribute('aria-label').toLowerCase().includes(kw));
+                if (el) { el.click(); return true; }
+                return false;
+            }"""
+            if page.evaluate(js, js_kw):
+                log(stage, name + " выключен (js)")
+                done = True
+                continue
+        except Exception:
+            pass
+        # 3) Keyboard fallback
+        if not done:
+            try:
+                if name == "mic":
+                    page.keyboard.press("Control+d")
+                else:
+                    page.keyboard.press("Control+e")
+                log(stage, name + " выключен (hotkey)")
+            except Exception:
+                pass
 
 
 def _dump_debug(page, mid, tag):
