@@ -129,6 +129,10 @@ async def _watch(mid, proc, sid):
                 "⏳ " + mid + ": в комнате пока никого нет — не вхожу, повторю позже"))
         return
 
+    if rc < 0:
+        # SIGTERM (-15) или SIGKILL (-9) — ручная остановка
+        return
+
     key = "fail_" + str(sid or mid) + "_" + str(rc)
     if key not in _notified:
         _notified.add(key)
@@ -146,7 +150,7 @@ async def stop_session(mid):
         open(_flag_path(mid), "w").close()
     except Exception:
         pass
-    for _ in range(15):
+    for _ in range(5):
         await asyncio.sleep(1)
         if proc.returncode is not None:
             break
