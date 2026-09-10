@@ -48,6 +48,9 @@ JOIN_WAIT_SEC = 90
 JOIN_CONFIRM_SEC = 45
 QUEUED_WAIT_SEC = 300
 LOOP_SLEEP_SEC = 20
+SUBS_DIR = "storage/subs"
+CAP_FLUSH_SEC = 10
+
 ROSTER_TG_SEC = 300
 
 
@@ -408,6 +411,76 @@ def _scan_roster(page, text=None):
 
 # ---------- Вход ----------
 
+def _enable_captions(page, mid):
+    labels = ["Turn on captions", "Включить субтитры", "Увімкнути субтитри"]
+    off_labels = ["Turn off captions", "Выключить субтитры", "Вимкнути субтитри"]
+    for label in off_labels:
+        try:
+            if page.locator(f'button[aria-label*="{label}"]').count() > 0:
+                log(mid, "Субтитры уже включены")
+                return True
+        except Exception:
+            pass
+    for label in labels:
+        try:
+            btn = page.locator(f'button[aria-label*="{label}"]').first
+            if btn.is_visible(timeout=3000):
+                btn.click(timeout=2000)
+                log(mid, "Включил субтитры")
+                return True
+        except Exception:
+            pass
+    return False
+
+
+def _inject_caption_collector(page):
+    js = r'''
+    () => {
+        if (window.__capObs) return;
+        window.__captions = [];
+        const isCap = (n) => {
+            if (!n || n.nodeType !== 1) return false;
+            const t = (n.innerText || n.textContent || "").trim();
+            if (!t || t.length < 3 || t.length > 300) return false;
+            const tag = n.tagName.toLowerCase();
+            if (['button','svg','path','img','video','input','style','script'].includes(tag)) return false;
+            if (n.children && n.children.length > 2) return false;
+            if (n.closest && (n.closest('[data-participant-id]') || n.closest('[role=\"listitem\"]'))) return false;
+            return true;
+        };
+        const obs = new MutationObserver((muts) => {
+            for (const m of muts) {
+                for (const n of m.addedNodes) {
+                    if (isCap(n)) window.__captions.push(n.innerText.trim());
+                }
+            }
+        });
+        obs.observe(document.body, { childList: true, subtree: true });
+        window.__capObs = obs;
+    }
+    '''
+    try:
+        page.evaluate(js)
+    except Exception:
+        pass
+
+
+def _flush_captions(page, mid, token=None, chat_id=None):
+    try:
+        arr = page.evaluate("window.__captions || []")
+        if arr:
+            page.evaluate("window.__captions = []")
+            os.makedirs(SUBS_DIR, exist_ok=True)
+            path = os.path.join(SUBS_DIR, mid + ".txt")
+            with open(path, "a", encoding="utf-8") as f:
+                f.write("\n".join(arr) + "\n")
+            if token and chat_id:
+                send_tg(token, chat_id, "\u270f\ufe0f \u0421\u0443\u0431\u0442\u0438\u0442\u0440\u044b +" + str(len(arr)) + " \u0441\u0442\u0440\u043e\u043a, \u0444\u0430\u0439\u043b: " + path)
+            return len(arr)
+    except Exception:
+        pass
+    return 0
+
 def _ensure_media_off(page, mid):
     prefixes = ("Выключить ", "Вимкнути ", "Turn off ", "Отключить ")
     devices = ("камеру", "микрофон", "camera", "microphone", "мікрофон")
@@ -580,6 +653,9 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
             log(prefix, "Всего: " + str(total) + ", уникальных имён: " + str(len(names)))
             log(prefix, "Организатор: " + str(organizer or "не найден"))
             log(prefix, "Имена: " + ", ".join(names_list))
+            _enable_captions(page, prefix)
+            _inject_caption_collector(page)
+
 
             msg = "✅ Вошёл во встречу в " + now_kiev() + "\n👥 Участников: " + str(total)
             if organizer:
@@ -598,6 +674,7 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
             last_roster_tg = time.time()
 
             while True:
+                _cap_counter = 0
                 now = time.time()
 
                 if os.path.exists(stop_flag):
@@ -647,6 +724,13 @@ def run_session(meet_id, url, duration_min, token, chat_id, sid=None, max_overru
                                     "\n".join(html.escape(x) for x in parts))
                         reported_names = set(names_now)
                         last_roster_tg = now
+
+                _cap_counter += LOOP_SLEEP_SEC
+                if _cap_counter >= CAP_FLUSH_SEC:
+                    n = _flush_captions(page, prefix)
+                    if n:
+                        log(prefix, "Субтитры: +" + str(n) + " строк")
+                    _cap_counter = 0
 
                 time.sleep(LOOP_SLEEP_SEC)
 
