@@ -1,13 +1,86 @@
-2026-09-11 07:17:58,126 root INFO Scheduler | пересобран (Киев): записей расписания 2, проверка каждые 30 с, одна сессия за раз
-2026-09-11 07:17:58,126 aiogram.dispatcher INFO Start polling
-2026-09-11 07:17:58,182 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-11 07:18:28,132 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:18:58 EEST)" (scheduled at 2026-09-11 10:18:28.121947+03:00)
-2026-09-11 07:18:28,138 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:18:58 EEST)" executed successfully
-2026-09-11 07:18:58,126 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:28 EEST)" (scheduled at 2026-09-11 10:18:58.121947+03:00)
-2026-09-11 07:18:58,131 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:28 EEST)" executed successfully
-2026-09-11 07:19:04,371 aiogram.event INFO Update id=566224851 is handled. Duration 80 ms by bot id=8779376364
-2026-09-11 07:19:24,799 aiogram.event INFO Update id=566224852 is not handled. Duration 19 ms by bot id=8779376364
-2026-09-11 07:19:24,799 aiogram.event ERROR Cause exception while process update id=566224852 by bot id=8779376364
+2026-09-11 15:49:29,772 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-11 15:49:29,772 aiogram.dispatcher INFO Start polling
+2026-09-11 15:49:30,063 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-11 15:49:35,402 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
+2026-09-11 15:49:35,402 aiogram.dispatcher INFO Start polling
+2026-09-11 15:49:35,452 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-11 15:49:35,476 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:35,476 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-11 15:49:39,498 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:39,498 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-11 15:49:40,515 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:40,515 aiogram.dispatcher WARNING Sleep for 1.195563 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-11 15:49:44,935 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:44,935 aiogram.dispatcher WARNING Sleep for 1.338581 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-11 15:49:46,295 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:46,295 aiogram.dispatcher WARNING Sleep for 1.372540 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-11 15:49:50,682 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:50,682 aiogram.dispatcher WARNING Sleep for 1.761845 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-11 15:49:52,470 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:52,470 aiogram.dispatcher WARNING Sleep for 1.795780 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-11 15:49:57,283 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:57,283 aiogram.dispatcher WARNING Sleep for 2.403598 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-11 15:49:59,702 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:49:59,702 aiogram.dispatcher WARNING Sleep for 2.419820 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-11 15:49:59,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:29 EEST)" (scheduled at 2026-09-11 18:49:59.768666+03:00)
+2026-09-11 15:49:59,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:29 EEST)" executed successfully
+2026-09-11 15:50:05,138 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:05,138 aiogram.dispatcher WARNING Sleep for 3.154844 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-11 15:50:05,399 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:35 EEST)" (scheduled at 2026-09-11 18:50:05.398773+03:00)
+2026-09-11 15:50:05,404 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:35 EEST)" executed successfully
+2026-09-11 15:50:08,312 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:08,312 aiogram.dispatcher WARNING Sleep for 3.227020 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-11 15:50:11,557 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:11,557 aiogram.dispatcher WARNING Sleep for 4.063044 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-11 15:50:15,638 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:15,638 aiogram.dispatcher WARNING Sleep for 4.103104 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-11 15:50:19,758 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:19,758 aiogram.dispatcher WARNING Sleep for 5.028657 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-11 15:50:24,807 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:24,807 aiogram.dispatcher WARNING Sleep for 4.845542 seconds and try again... (tryings = 7, bot id = 8779376364)
+2026-09-11 15:50:29,673 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:29,673 aiogram.dispatcher WARNING Sleep for 5.047151 seconds and try again... (tryings = 7, bot id = 8779376364)
+2026-09-11 15:50:29,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:59 EEST)" (scheduled at 2026-09-11 18:50:29.768666+03:00)
+2026-09-11 15:50:29,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:50:59 EEST)" executed successfully
+2026-09-11 15:50:34,738 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:34,738 aiogram.dispatcher WARNING Sleep for 4.993931 seconds and try again... (tryings = 8, bot id = 8779376364)
+2026-09-11 15:50:35,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:05 EEST)" (scheduled at 2026-09-11 18:50:35.398773+03:00)
+2026-09-11 15:50:35,404 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:05 EEST)" executed successfully
+2026-09-11 15:50:39,750 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:39,750 aiogram.dispatcher WARNING Sleep for 5.046806 seconds and try again... (tryings = 8, bot id = 8779376364)
+2026-09-11 15:50:44,822 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:44,822 aiogram.dispatcher WARNING Sleep for 4.944559 seconds and try again... (tryings = 9, bot id = 8779376364)
+2026-09-11 15:50:49,785 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:49,786 aiogram.dispatcher WARNING Sleep for 5.244352 seconds and try again... (tryings = 9, bot id = 8779376364)
+2026-09-11 15:50:55,056 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:50:55,056 aiogram.dispatcher WARNING Sleep for 4.957728 seconds and try again... (tryings = 10, bot id = 8779376364)
+2026-09-11 15:50:59,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:29 EEST)" (scheduled at 2026-09-11 18:50:59.768666+03:00)
+2026-09-11 15:50:59,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:29 EEST)" executed successfully
+2026-09-11 15:51:00,028 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:00,028 aiogram.dispatcher WARNING Sleep for 4.810870 seconds and try again... (tryings = 10, bot id = 8779376364)
+2026-09-11 15:51:04,863 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:04,864 aiogram.dispatcher WARNING Sleep for 5.151934 seconds and try again... (tryings = 11, bot id = 8779376364)
+2026-09-11 15:51:05,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:35 EEST)" (scheduled at 2026-09-11 18:51:05.398773+03:00)
+2026-09-11 15:51:05,404 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:35 EEST)" executed successfully
+2026-09-11 15:51:10,039 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:10,039 aiogram.dispatcher WARNING Sleep for 4.872918 seconds and try again... (tryings = 11, bot id = 8779376364)
+2026-09-11 15:51:14,937 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:14,937 aiogram.dispatcher WARNING Sleep for 4.919761 seconds and try again... (tryings = 12, bot id = 8779376364)
+2026-09-11 15:51:19,879 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:19,879 aiogram.dispatcher WARNING Sleep for 4.997998 seconds and try again... (tryings = 12, bot id = 8779376364)
+2026-09-11 15:51:24,898 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:24,898 aiogram.dispatcher WARNING Sleep for 5.080784 seconds and try again... (tryings = 13, bot id = 8779376364)
+2026-09-11 15:51:29,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:59 EEST)" (scheduled at 2026-09-11 18:51:29.768666+03:00)
+2026-09-11 15:51:29,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:51:59 EEST)" executed successfully
+2026-09-11 15:51:29,993 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:29,993 aiogram.dispatcher WARNING Sleep for 4.869628 seconds and try again... (tryings = 13, bot id = 8779376364)
+2026-09-11 15:51:34,883 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:34,883 aiogram.dispatcher WARNING Sleep for 5.197705 seconds and try again... (tryings = 14, bot id = 8779376364)
+2026-09-11 15:51:35,399 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:05 EEST)" (scheduled at 2026-09-11 18:51:35.398773+03:00)
+2026-09-11 15:51:35,403 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:05 EEST)" executed successfully
+2026-09-11 15:51:35,432 aiogram.dispatcher INFO Connection established (tryings = 14, bot id = 8779376364)
+2026-09-11 15:51:35,443 aiogram.event INFO Update id=566224866 is not handled. Duration 10 ms by bot id=8779376364
+2026-09-11 15:51:35,443 aiogram.event ERROR Cause exception while process update id=566224866 by bot id=8779376364
 ValueError: too many values to unpack (expected 2)
 Traceback (most recent call last):
   File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
@@ -59,29 +132,489 @@ Traceback (most recent call last):
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     ^^^^^^^
 ValueError: too many values to unpack (expected 2)
-2026-09-11 07:19:28,127 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:58 EEST)" (scheduled at 2026-09-11 10:19:28.121947+03:00)
-2026-09-11 07:19:28,137 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:58 EEST)" executed successfully
-2026-09-11 07:19:58,126 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:28 EEST)" (scheduled at 2026-09-11 10:19:58.121947+03:00)
-2026-09-11 07:19:58,135 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:28 EEST)" executed successfully
-2026-09-11 07:20:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:58 EEST)" (scheduled at 2026-09-11 10:20:28.121947+03:00)
-2026-09-11 07:20:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:58 EEST)" executed successfully
-2026-09-11 07:20:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:28 EEST)" (scheduled at 2026-09-11 10:20:58.121947+03:00)
-2026-09-11 07:20:58,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:28 EEST)" executed successfully
-2026-09-11 07:21:28,124 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:58 EEST)" (scheduled at 2026-09-11 10:21:28.121947+03:00)
-2026-09-11 07:21:28,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:58 EEST)" executed successfully
-2026-09-11 07:21:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:28 EEST)" (scheduled at 2026-09-11 10:21:58.121947+03:00)
-2026-09-11 07:21:58,131 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:28 EEST)" executed successfully
-2026-09-11 07:22:28,123 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:58 EEST)" (scheduled at 2026-09-11 10:22:28.121947+03:00)
-2026-09-11 07:22:28,128 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:58 EEST)" executed successfully
-2026-09-11 07:22:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:28 EEST)" (scheduled at 2026-09-11 10:22:58.121947+03:00)
-2026-09-11 07:22:58,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:28 EEST)" executed successfully
-2026-09-11 07:23:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:58 EEST)" (scheduled at 2026-09-11 10:23:28.121947+03:00)
-2026-09-11 07:23:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:58 EEST)" executed successfully
-2026-09-11 07:23:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:28 EEST)" (scheduled at 2026-09-11 10:23:58.121947+03:00)
-2026-09-11 07:23:58,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:28 EEST)" executed successfully
-2026-09-11 07:24:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:58 EEST)" (scheduled at 2026-09-11 10:24:28.121947+03:00)
-2026-09-11 07:24:28,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:58 EEST)" executed successfully
-2026-09-11 07:24:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:28 EEST)" (scheduled at 2026-09-11 10:24:58.121947+03:00)
-2026-09-11 07:24:58,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:28 EEST)" executed successfully
-2026-09-11 07:25:28,124 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:58 EEST)" (scheduled at 2026-09-11 10:25:28.121947+03:00)
-2026-09-11 07:25:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:58 EEST)" executed successfully
+2026-09-11 15:51:40,509 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:40,509 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-11 15:51:44,526 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:44,526 aiogram.dispatcher WARNING Sleep for 4.908763 seconds and try again... (tryings = 15, bot id = 8779376364)
+2026-09-11 15:51:49,453 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:49,453 aiogram.dispatcher WARNING Sleep for 1.381631 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-11 15:51:53,854 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:53,854 aiogram.dispatcher WARNING Sleep for 5.159503 seconds and try again... (tryings = 16, bot id = 8779376364)
+2026-09-11 15:51:59,033 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:51:59,033 aiogram.dispatcher WARNING Sleep for 1.881084 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-11 15:51:59,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:29 EEST)" (scheduled at 2026-09-11 18:51:59.768666+03:00)
+2026-09-11 15:51:59,773 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:29 EEST)" executed successfully
+2026-09-11 15:52:03,938 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:03,938 aiogram.dispatcher WARNING Sleep for 5.060648 seconds and try again... (tryings = 17, bot id = 8779376364)
+2026-09-11 15:52:05,403 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:35 EEST)" (scheduled at 2026-09-11 18:52:05.398773+03:00)
+2026-09-11 15:52:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:35 EEST)" executed successfully
+2026-09-11 15:52:09,016 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:09,016 aiogram.dispatcher WARNING Sleep for 2.508608 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-11 15:52:14,546 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:14,546 aiogram.dispatcher WARNING Sleep for 5.039593 seconds and try again... (tryings = 18, bot id = 8779376364)
+2026-09-11 15:52:19,852 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:19,853 aiogram.dispatcher WARNING Sleep for 3.235411 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-11 15:52:23,110 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:23,111 aiogram.dispatcher WARNING Sleep for 5.123868 seconds and try again... (tryings = 19, bot id = 8779376364)
+2026-09-11 15:52:28,255 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:28,255 aiogram.dispatcher WARNING Sleep for 4.129222 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-11 15:52:29,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:59 EEST)" (scheduled at 2026-09-11 18:52:29.768666+03:00)
+2026-09-11 15:52:29,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:52:59 EEST)" executed successfully
+2026-09-11 15:52:32,405 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:32,405 aiogram.dispatcher WARNING Sleep for 4.955724 seconds and try again... (tryings = 20, bot id = 8779376364)
+2026-09-11 15:52:35,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:05 EEST)" (scheduled at 2026-09-11 18:52:35.398773+03:00)
+2026-09-11 15:52:35,407 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:05 EEST)" executed successfully
+2026-09-11 15:52:37,375 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:37,375 aiogram.dispatcher WARNING Sleep for 4.923412 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-11 15:52:42,328 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:42,328 aiogram.dispatcher WARNING Sleep for 5.086885 seconds and try again... (tryings = 21, bot id = 8779376364)
+2026-09-11 15:52:47,452 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:47,452 aiogram.dispatcher WARNING Sleep for 4.854068 seconds and try again... (tryings = 7, bot id = 8779376364)
+2026-09-11 15:52:52,332 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:52,332 aiogram.dispatcher WARNING Sleep for 4.972213 seconds and try again... (tryings = 22, bot id = 8779376364)
+2026-09-11 15:52:57,322 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:52:57,322 aiogram.dispatcher WARNING Sleep for 5.079130 seconds and try again... (tryings = 8, bot id = 8779376364)
+2026-09-11 15:52:59,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:29 EEST)" (scheduled at 2026-09-11 18:52:59.768666+03:00)
+2026-09-11 15:52:59,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:29 EEST)" executed successfully
+2026-09-11 15:53:02,422 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:02,422 aiogram.dispatcher WARNING Sleep for 5.131735 seconds and try again... (tryings = 23, bot id = 8779376364)
+2026-09-11 15:53:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:35 EEST)" (scheduled at 2026-09-11 18:53:05.398773+03:00)
+2026-09-11 15:53:05,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:35 EEST)" executed successfully
+2026-09-11 15:53:07,589 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:07,589 aiogram.dispatcher WARNING Sleep for 5.094228 seconds and try again... (tryings = 9, bot id = 8779376364)
+2026-09-11 15:53:12,772 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:12,772 aiogram.dispatcher WARNING Sleep for 4.898484 seconds and try again... (tryings = 24, bot id = 8779376364)
+2026-09-11 15:53:17,692 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:17,692 aiogram.dispatcher WARNING Sleep for 4.826007 seconds and try again... (tryings = 10, bot id = 8779376364)
+2026-09-11 15:53:22,541 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:22,541 aiogram.dispatcher WARNING Sleep for 5.101949 seconds and try again... (tryings = 25, bot id = 8779376364)
+2026-09-11 15:53:27,662 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:27,662 aiogram.dispatcher WARNING Sleep for 4.945791 seconds and try again... (tryings = 11, bot id = 8779376364)
+2026-09-11 15:53:29,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:59 EEST)" (scheduled at 2026-09-11 18:53:29.768666+03:00)
+2026-09-11 15:53:29,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:53:59 EEST)" executed successfully
+2026-09-11 15:53:32,631 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:32,631 aiogram.dispatcher WARNING Sleep for 5.069604 seconds and try again... (tryings = 26, bot id = 8779376364)
+2026-09-11 15:53:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:05 EEST)" (scheduled at 2026-09-11 18:53:35.398773+03:00)
+2026-09-11 15:53:35,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:05 EEST)" executed successfully
+2026-09-11 15:53:37,718 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:37,718 aiogram.dispatcher WARNING Sleep for 5.079640 seconds and try again... (tryings = 12, bot id = 8779376364)
+2026-09-11 15:53:42,856 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:42,856 aiogram.dispatcher WARNING Sleep for 4.969237 seconds and try again... (tryings = 27, bot id = 8779376364)
+2026-09-11 15:53:47,843 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:47,843 aiogram.dispatcher WARNING Sleep for 5.167483 seconds and try again... (tryings = 13, bot id = 8779376364)
+2026-09-11 15:53:53,032 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:53,032 aiogram.dispatcher WARNING Sleep for 5.070464 seconds and try again... (tryings = 28, bot id = 8779376364)
+2026-09-11 15:53:58,121 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:53:58,121 aiogram.dispatcher WARNING Sleep for 4.973960 seconds and try again... (tryings = 14, bot id = 8779376364)
+2026-09-11 15:53:59,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:29 EEST)" (scheduled at 2026-09-11 18:53:59.768666+03:00)
+2026-09-11 15:53:59,775 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:29 EEST)" executed successfully
+2026-09-11 15:54:03,122 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:03,122 aiogram.dispatcher WARNING Sleep for 5.018938 seconds and try again... (tryings = 29, bot id = 8779376364)
+2026-09-11 15:54:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:35 EEST)" (scheduled at 2026-09-11 18:54:05.398773+03:00)
+2026-09-11 15:54:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:35 EEST)" executed successfully
+2026-09-11 15:54:08,159 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:08,159 aiogram.dispatcher WARNING Sleep for 5.100829 seconds and try again... (tryings = 15, bot id = 8779376364)
+2026-09-11 15:54:13,275 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:13,275 aiogram.dispatcher WARNING Sleep for 4.904564 seconds and try again... (tryings = 30, bot id = 8779376364)
+2026-09-11 15:54:18,201 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:18,201 aiogram.dispatcher WARNING Sleep for 4.914043 seconds and try again... (tryings = 16, bot id = 8779376364)
+2026-09-11 15:54:23,156 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:23,156 aiogram.dispatcher WARNING Sleep for 5.019147 seconds and try again... (tryings = 31, bot id = 8779376364)
+2026-09-11 15:54:28,193 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:28,193 aiogram.dispatcher WARNING Sleep for 4.802176 seconds and try again... (tryings = 17, bot id = 8779376364)
+2026-09-11 15:54:29,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:59 EEST)" (scheduled at 2026-09-11 18:54:29.768666+03:00)
+2026-09-11 15:54:29,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:54:59 EEST)" executed successfully
+2026-09-11 15:54:33,015 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:33,015 aiogram.dispatcher WARNING Sleep for 5.026032 seconds and try again... (tryings = 32, bot id = 8779376364)
+2026-09-11 15:54:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:05 EEST)" (scheduled at 2026-09-11 18:54:35.398773+03:00)
+2026-09-11 15:54:35,404 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:05 EEST)" executed successfully
+2026-09-11 15:54:38,059 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:38,060 aiogram.dispatcher WARNING Sleep for 4.998755 seconds and try again... (tryings = 18, bot id = 8779376364)
+2026-09-11 15:54:43,075 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:43,075 aiogram.dispatcher WARNING Sleep for 4.939439 seconds and try again... (tryings = 33, bot id = 8779376364)
+2026-09-11 15:54:48,030 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:48,030 aiogram.dispatcher WARNING Sleep for 5.116380 seconds and try again... (tryings = 19, bot id = 8779376364)
+2026-09-11 15:54:53,168 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:53,168 aiogram.dispatcher WARNING Sleep for 5.027553 seconds and try again... (tryings = 34, bot id = 8779376364)
+2026-09-11 15:54:58,217 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:54:58,217 aiogram.dispatcher WARNING Sleep for 4.852279 seconds and try again... (tryings = 20, bot id = 8779376364)
+2026-09-11 15:54:59,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:29 EEST)" (scheduled at 2026-09-11 18:54:59.768666+03:00)
+2026-09-11 15:54:59,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:29 EEST)" executed successfully
+2026-09-11 15:55:03,102 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:03,102 aiogram.dispatcher WARNING Sleep for 4.941681 seconds and try again... (tryings = 35, bot id = 8779376364)
+2026-09-11 15:55:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:35 EEST)" (scheduled at 2026-09-11 18:55:05.398773+03:00)
+2026-09-11 15:55:05,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:35 EEST)" executed successfully
+2026-09-11 15:55:08,061 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:08,061 aiogram.dispatcher WARNING Sleep for 5.185584 seconds and try again... (tryings = 21, bot id = 8779376364)
+2026-09-11 15:55:13,307 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:13,307 aiogram.dispatcher WARNING Sleep for 5.027168 seconds and try again... (tryings = 36, bot id = 8779376364)
+2026-09-11 15:55:18,355 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:18,355 aiogram.dispatcher WARNING Sleep for 5.073703 seconds and try again... (tryings = 22, bot id = 8779376364)
+2026-09-11 15:55:23,448 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:23,448 aiogram.dispatcher WARNING Sleep for 5.033389 seconds and try again... (tryings = 37, bot id = 8779376364)
+2026-09-11 15:55:28,501 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:28,501 aiogram.dispatcher WARNING Sleep for 4.987305 seconds and try again... (tryings = 23, bot id = 8779376364)
+2026-09-11 15:55:29,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:59 EEST)" (scheduled at 2026-09-11 18:55:29.768666+03:00)
+2026-09-11 15:55:29,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:55:59 EEST)" executed successfully
+2026-09-11 15:55:33,514 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:33,514 aiogram.dispatcher WARNING Sleep for 4.914306 seconds and try again... (tryings = 38, bot id = 8779376364)
+2026-09-11 15:55:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:05 EEST)" (scheduled at 2026-09-11 18:55:35.398773+03:00)
+2026-09-11 15:55:35,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:05 EEST)" executed successfully
+2026-09-11 15:55:38,449 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:38,449 aiogram.dispatcher WARNING Sleep for 5.009428 seconds and try again... (tryings = 24, bot id = 8779376364)
+2026-09-11 15:55:43,478 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:43,479 aiogram.dispatcher WARNING Sleep for 4.926930 seconds and try again... (tryings = 39, bot id = 8779376364)
+2026-09-11 15:55:48,425 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:48,425 aiogram.dispatcher WARNING Sleep for 5.120941 seconds and try again... (tryings = 25, bot id = 8779376364)
+2026-09-11 15:55:53,571 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:53,572 aiogram.dispatcher WARNING Sleep for 5.006134 seconds and try again... (tryings = 40, bot id = 8779376364)
+2026-09-11 15:55:58,598 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:55:58,598 aiogram.dispatcher WARNING Sleep for 4.902237 seconds and try again... (tryings = 26, bot id = 8779376364)
+2026-09-11 15:55:59,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:29 EEST)" (scheduled at 2026-09-11 18:55:59.768666+03:00)
+2026-09-11 15:55:59,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:29 EEST)" executed successfully
+2026-09-11 15:56:03,525 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:03,525 aiogram.dispatcher WARNING Sleep for 5.000553 seconds and try again... (tryings = 41, bot id = 8779376364)
+2026-09-11 15:56:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:35 EEST)" (scheduled at 2026-09-11 18:56:05.398773+03:00)
+2026-09-11 15:56:05,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:35 EEST)" executed successfully
+2026-09-11 15:56:08,725 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:08,725 aiogram.dispatcher WARNING Sleep for 5.114946 seconds and try again... (tryings = 27, bot id = 8779376364)
+2026-09-11 15:56:13,870 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:13,870 aiogram.dispatcher WARNING Sleep for 4.778201 seconds and try again... (tryings = 42, bot id = 8779376364)
+2026-09-11 15:56:18,666 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:18,666 aiogram.dispatcher WARNING Sleep for 4.897164 seconds and try again... (tryings = 28, bot id = 8779376364)
+2026-09-11 15:56:23,588 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:23,588 aiogram.dispatcher WARNING Sleep for 4.991193 seconds and try again... (tryings = 43, bot id = 8779376364)
+2026-09-11 15:56:28,597 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:28,597 aiogram.dispatcher WARNING Sleep for 4.978484 seconds and try again... (tryings = 29, bot id = 8779376364)
+2026-09-11 15:56:29,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:59 EEST)" (scheduled at 2026-09-11 18:56:29.768666+03:00)
+2026-09-11 15:56:29,773 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:56:59 EEST)" executed successfully
+2026-09-11 15:56:33,624 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:33,624 aiogram.dispatcher WARNING Sleep for 4.908918 seconds and try again... (tryings = 44, bot id = 8779376364)
+2026-09-11 15:56:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:05 EEST)" (scheduled at 2026-09-11 18:56:35.398773+03:00)
+2026-09-11 15:56:35,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:05 EEST)" executed successfully
+2026-09-11 15:56:38,549 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:38,549 aiogram.dispatcher WARNING Sleep for 5.138814 seconds and try again... (tryings = 30, bot id = 8779376364)
+2026-09-11 15:56:43,741 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:43,741 aiogram.dispatcher WARNING Sleep for 5.086849 seconds and try again... (tryings = 45, bot id = 8779376364)
+2026-09-11 15:56:48,848 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:48,848 aiogram.dispatcher WARNING Sleep for 4.876875 seconds and try again... (tryings = 31, bot id = 8779376364)
+2026-09-11 15:56:53,823 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:53,823 aiogram.dispatcher WARNING Sleep for 5.032189 seconds and try again... (tryings = 46, bot id = 8779376364)
+2026-09-11 15:56:58,876 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:56:58,877 aiogram.dispatcher WARNING Sleep for 5.165000 seconds and try again... (tryings = 32, bot id = 8779376364)
+2026-09-11 15:56:59,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:29 EEST)" (scheduled at 2026-09-11 18:56:59.768666+03:00)
+2026-09-11 15:56:59,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:29 EEST)" executed successfully
+2026-09-11 15:57:04,070 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:04,070 aiogram.dispatcher WARNING Sleep for 5.196014 seconds and try again... (tryings = 47, bot id = 8779376364)
+2026-09-11 15:57:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:35 EEST)" (scheduled at 2026-09-11 18:57:05.398773+03:00)
+2026-09-11 15:57:05,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:35 EEST)" executed successfully
+2026-09-11 15:57:09,280 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:09,280 aiogram.dispatcher WARNING Sleep for 4.873457 seconds and try again... (tryings = 33, bot id = 8779376364)
+2026-09-11 15:57:14,173 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:14,174 aiogram.dispatcher WARNING Sleep for 4.905125 seconds and try again... (tryings = 48, bot id = 8779376364)
+2026-09-11 15:57:19,101 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:19,101 aiogram.dispatcher WARNING Sleep for 4.805245 seconds and try again... (tryings = 34, bot id = 8779376364)
+2026-09-11 15:57:23,943 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:23,943 aiogram.dispatcher WARNING Sleep for 4.973589 seconds and try again... (tryings = 49, bot id = 8779376364)
+2026-09-11 15:57:28,936 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:28,936 aiogram.dispatcher WARNING Sleep for 5.115437 seconds and try again... (tryings = 35, bot id = 8779376364)
+2026-09-11 15:57:29,769 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:59 EEST)" (scheduled at 2026-09-11 18:57:29.768666+03:00)
+2026-09-11 15:57:29,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:57:59 EEST)" executed successfully
+2026-09-11 15:57:34,075 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:34,076 aiogram.dispatcher WARNING Sleep for 4.949961 seconds and try again... (tryings = 50, bot id = 8779376364)
+2026-09-11 15:57:35,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:05 EEST)" (scheduled at 2026-09-11 18:57:35.398773+03:00)
+2026-09-11 15:57:35,413 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:05 EEST)" executed successfully
+2026-09-11 15:57:39,042 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:39,043 aiogram.dispatcher WARNING Sleep for 5.033248 seconds and try again... (tryings = 36, bot id = 8779376364)
+2026-09-11 15:57:44,098 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:44,099 aiogram.dispatcher WARNING Sleep for 4.943998 seconds and try again... (tryings = 51, bot id = 8779376364)
+2026-09-11 15:57:49,058 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:49,058 aiogram.dispatcher WARNING Sleep for 4.984703 seconds and try again... (tryings = 37, bot id = 8779376364)
+2026-09-11 15:57:54,064 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:54,064 aiogram.dispatcher WARNING Sleep for 5.064260 seconds and try again... (tryings = 52, bot id = 8779376364)
+2026-09-11 15:57:59,220 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:57:59,220 aiogram.dispatcher WARNING Sleep for 5.113304 seconds and try again... (tryings = 38, bot id = 8779376364)
+2026-09-11 15:57:59,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:29 EEST)" (scheduled at 2026-09-11 18:57:59.768666+03:00)
+2026-09-11 15:57:59,773 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:29 EEST)" executed successfully
+2026-09-11 15:58:04,353 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:04,353 aiogram.dispatcher WARNING Sleep for 5.134410 seconds and try again... (tryings = 53, bot id = 8779376364)
+2026-09-11 15:58:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:35 EEST)" (scheduled at 2026-09-11 18:58:05.398773+03:00)
+2026-09-11 15:58:05,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:35 EEST)" executed successfully
+2026-09-11 15:58:09,505 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:09,506 aiogram.dispatcher WARNING Sleep for 5.166400 seconds and try again... (tryings = 39, bot id = 8779376364)
+2026-09-11 15:58:14,693 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:14,693 aiogram.dispatcher WARNING Sleep for 4.980733 seconds and try again... (tryings = 54, bot id = 8779376364)
+2026-09-11 15:58:19,698 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:19,698 aiogram.dispatcher WARNING Sleep for 5.014574 seconds and try again... (tryings = 40, bot id = 8779376364)
+2026-09-11 15:58:24,734 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:24,734 aiogram.dispatcher WARNING Sleep for 5.197485 seconds and try again... (tryings = 55, bot id = 8779376364)
+2026-09-11 15:58:29,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:59 EEST)" (scheduled at 2026-09-11 18:58:29.768666+03:00)
+2026-09-11 15:58:29,782 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:58:59 EEST)" executed successfully
+2026-09-11 15:58:29,945 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:29,945 aiogram.dispatcher WARNING Sleep for 5.120089 seconds and try again... (tryings = 41, bot id = 8779376364)
+2026-09-11 15:58:35,088 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:35,088 aiogram.dispatcher WARNING Sleep for 4.989375 seconds and try again... (tryings = 56, bot id = 8779376364)
+2026-09-11 15:58:35,399 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:05 EEST)" (scheduled at 2026-09-11 18:58:35.398773+03:00)
+2026-09-11 15:58:35,403 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:05 EEST)" executed successfully
+2026-09-11 15:58:40,096 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:40,096 aiogram.dispatcher WARNING Sleep for 5.104152 seconds and try again... (tryings = 42, bot id = 8779376364)
+2026-09-11 15:58:45,233 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:45,234 aiogram.dispatcher WARNING Sleep for 5.181903 seconds and try again... (tryings = 57, bot id = 8779376364)
+2026-09-11 15:58:50,432 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:50,432 aiogram.dispatcher WARNING Sleep for 4.972303 seconds and try again... (tryings = 43, bot id = 8779376364)
+2026-09-11 15:58:55,422 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:58:55,423 aiogram.dispatcher WARNING Sleep for 4.903116 seconds and try again... (tryings = 58, bot id = 8779376364)
+2026-09-11 15:58:59,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:29 EEST)" (scheduled at 2026-09-11 18:58:59.768666+03:00)
+2026-09-11 15:58:59,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:29 EEST)" executed successfully
+2026-09-11 15:59:00,343 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:00,343 aiogram.dispatcher WARNING Sleep for 5.072509 seconds and try again... (tryings = 44, bot id = 8779376364)
+2026-09-11 15:59:05,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:35 EEST)" (scheduled at 2026-09-11 18:59:05.398773+03:00)
+2026-09-11 15:59:05,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:35 EEST)" executed successfully
+2026-09-11 15:59:05,452 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:05,452 aiogram.dispatcher WARNING Sleep for 5.050825 seconds and try again... (tryings = 59, bot id = 8779376364)
+2026-09-11 15:59:10,521 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:10,521 aiogram.dispatcher WARNING Sleep for 4.819761 seconds and try again... (tryings = 45, bot id = 8779376364)
+2026-09-11 15:59:15,360 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:15,360 aiogram.dispatcher WARNING Sleep for 5.141300 seconds and try again... (tryings = 60, bot id = 8779376364)
+2026-09-11 15:59:20,519 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:20,519 aiogram.dispatcher WARNING Sleep for 4.916014 seconds and try again... (tryings = 46, bot id = 8779376364)
+2026-09-11 15:59:25,458 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:25,458 aiogram.dispatcher WARNING Sleep for 4.907085 seconds and try again... (tryings = 61, bot id = 8779376364)
+2026-09-11 15:59:29,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:59 EEST)" (scheduled at 2026-09-11 18:59:29.768666+03:00)
+2026-09-11 15:59:29,776 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 18:59:59 EEST)" executed successfully
+2026-09-11 15:59:30,379 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:30,379 aiogram.dispatcher WARNING Sleep for 5.044286 seconds and try again... (tryings = 47, bot id = 8779376364)
+2026-09-11 15:59:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:05 EEST)" (scheduled at 2026-09-11 18:59:35.398773+03:00)
+2026-09-11 15:59:35,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:05 EEST)" executed successfully
+2026-09-11 15:59:35,449 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:35,449 aiogram.dispatcher WARNING Sleep for 4.961581 seconds and try again... (tryings = 62, bot id = 8779376364)
+2026-09-11 15:59:40,427 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:40,427 aiogram.dispatcher WARNING Sleep for 4.868238 seconds and try again... (tryings = 48, bot id = 8779376364)
+2026-09-11 15:59:45,315 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:45,315 aiogram.dispatcher WARNING Sleep for 4.846855 seconds and try again... (tryings = 63, bot id = 8779376364)
+2026-09-11 15:59:50,180 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:50,180 aiogram.dispatcher WARNING Sleep for 5.069017 seconds and try again... (tryings = 49, bot id = 8779376364)
+2026-09-11 15:59:55,267 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 15:59:55,267 aiogram.dispatcher WARNING Sleep for 4.963552 seconds and try again... (tryings = 64, bot id = 8779376364)
+2026-09-11 15:59:59,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:29 EEST)" (scheduled at 2026-09-11 18:59:59.768666+03:00)
+2026-09-11 15:59:59,783 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:29 EEST)" executed successfully
+2026-09-11 16:00:00,252 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:00,252 aiogram.dispatcher WARNING Sleep for 5.141952 seconds and try again... (tryings = 50, bot id = 8779376364)
+2026-09-11 16:00:05,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:35 EEST)" (scheduled at 2026-09-11 19:00:05.398773+03:00)
+2026-09-11 16:00:05,405 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:35 EEST)" executed successfully
+2026-09-11 16:00:05,417 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:05,417 aiogram.dispatcher WARNING Sleep for 4.851507 seconds and try again... (tryings = 65, bot id = 8779376364)
+2026-09-11 16:00:10,290 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:10,290 aiogram.dispatcher WARNING Sleep for 4.969991 seconds and try again... (tryings = 51, bot id = 8779376364)
+2026-09-11 16:00:15,278 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:15,278 aiogram.dispatcher WARNING Sleep for 5.066155 seconds and try again... (tryings = 66, bot id = 8779376364)
+2026-09-11 16:00:20,363 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:20,363 aiogram.dispatcher WARNING Sleep for 4.936542 seconds and try again... (tryings = 52, bot id = 8779376364)
+2026-09-11 16:00:25,318 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:25,318 aiogram.dispatcher WARNING Sleep for 4.933582 seconds and try again... (tryings = 67, bot id = 8779376364)
+2026-09-11 16:00:29,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:59 EEST)" (scheduled at 2026-09-11 19:00:29.768666+03:00)
+2026-09-11 16:00:29,775 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:00:59 EEST)" executed successfully
+2026-09-11 16:00:30,269 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:30,269 aiogram.dispatcher WARNING Sleep for 5.044782 seconds and try again... (tryings = 53, bot id = 8779376364)
+2026-09-11 16:00:35,337 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:35,337 aiogram.dispatcher WARNING Sleep for 4.906220 seconds and try again... (tryings = 68, bot id = 8779376364)
+2026-09-11 16:00:35,399 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:05 EEST)" (scheduled at 2026-09-11 19:00:35.398773+03:00)
+2026-09-11 16:00:35,403 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:05 EEST)" executed successfully
+2026-09-11 16:00:40,272 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:40,272 aiogram.dispatcher WARNING Sleep for 5.047620 seconds and try again... (tryings = 54, bot id = 8779376364)
+2026-09-11 16:00:45,360 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:45,360 aiogram.dispatcher WARNING Sleep for 4.906664 seconds and try again... (tryings = 69, bot id = 8779376364)
+2026-09-11 16:00:50,292 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:50,292 aiogram.dispatcher WARNING Sleep for 5.119947 seconds and try again... (tryings = 55, bot id = 8779376364)
+2026-09-11 16:00:55,434 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:00:55,434 aiogram.dispatcher WARNING Sleep for 5.086908 seconds and try again... (tryings = 70, bot id = 8779376364)
+2026-09-11 16:00:59,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:29 EEST)" (scheduled at 2026-09-11 19:00:59.768666+03:00)
+2026-09-11 16:00:59,775 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:29 EEST)" executed successfully
+2026-09-11 16:01:00,534 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:00,534 aiogram.dispatcher WARNING Sleep for 4.954435 seconds and try again... (tryings = 56, bot id = 8779376364)
+2026-09-11 16:01:05,404 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:35 EEST)" (scheduled at 2026-09-11 19:01:05.398773+03:00)
+2026-09-11 16:01:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:35 EEST)" executed successfully
+2026-09-11 16:01:05,514 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:05,514 aiogram.dispatcher WARNING Sleep for 5.110247 seconds and try again... (tryings = 71, bot id = 8779376364)
+2026-09-11 16:01:10,637 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:10,637 aiogram.dispatcher WARNING Sleep for 5.025314 seconds and try again... (tryings = 57, bot id = 8779376364)
+2026-09-11 16:01:15,690 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:15,691 aiogram.dispatcher WARNING Sleep for 5.051848 seconds and try again... (tryings = 72, bot id = 8779376364)
+2026-09-11 16:01:20,760 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:20,761 aiogram.dispatcher WARNING Sleep for 4.998628 seconds and try again... (tryings = 58, bot id = 8779376364)
+2026-09-11 16:01:25,781 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:25,781 aiogram.dispatcher WARNING Sleep for 4.959102 seconds and try again... (tryings = 73, bot id = 8779376364)
+2026-09-11 16:01:29,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:59 EEST)" (scheduled at 2026-09-11 19:01:29.768666+03:00)
+2026-09-11 16:01:29,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:01:59 EEST)" executed successfully
+2026-09-11 16:01:31,000 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:31,000 aiogram.dispatcher WARNING Sleep for 4.939477 seconds and try again... (tryings = 59, bot id = 8779376364)
+2026-09-11 16:01:35,403 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:05 EEST)" (scheduled at 2026-09-11 19:01:35.398773+03:00)
+2026-09-11 16:01:35,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:05 EEST)" executed successfully
+2026-09-11 16:01:35,961 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:35,961 aiogram.dispatcher WARNING Sleep for 4.915652 seconds and try again... (tryings = 74, bot id = 8779376364)
+2026-09-11 16:01:40,892 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:40,892 aiogram.dispatcher WARNING Sleep for 4.926835 seconds and try again... (tryings = 60, bot id = 8779376364)
+2026-09-11 16:01:45,839 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:45,839 aiogram.dispatcher WARNING Sleep for 5.128008 seconds and try again... (tryings = 75, bot id = 8779376364)
+2026-09-11 16:01:50,986 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:50,986 aiogram.dispatcher WARNING Sleep for 5.020844 seconds and try again... (tryings = 61, bot id = 8779376364)
+2026-09-11 16:01:56,029 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:01:56,030 aiogram.dispatcher WARNING Sleep for 5.056162 seconds and try again... (tryings = 76, bot id = 8779376364)
+2026-09-11 16:01:59,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:29 EEST)" (scheduled at 2026-09-11 19:01:59.768666+03:00)
+2026-09-11 16:01:59,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:29 EEST)" executed successfully
+2026-09-11 16:02:01,109 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:01,109 aiogram.dispatcher WARNING Sleep for 5.022381 seconds and try again... (tryings = 62, bot id = 8779376364)
+2026-09-11 16:02:05,403 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:35 EEST)" (scheduled at 2026-09-11 19:02:05.398773+03:00)
+2026-09-11 16:02:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:35 EEST)" executed successfully
+2026-09-11 16:02:06,157 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:06,157 aiogram.dispatcher WARNING Sleep for 5.026588 seconds and try again... (tryings = 77, bot id = 8779376364)
+2026-09-11 16:02:11,200 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:11,200 aiogram.dispatcher WARNING Sleep for 4.794147 seconds and try again... (tryings = 63, bot id = 8779376364)
+2026-09-11 16:02:16,016 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:16,016 aiogram.dispatcher WARNING Sleep for 4.850061 seconds and try again... (tryings = 78, bot id = 8779376364)
+2026-09-11 16:02:20,884 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:20,884 aiogram.dispatcher WARNING Sleep for 4.965071 seconds and try again... (tryings = 64, bot id = 8779376364)
+2026-09-11 16:02:25,870 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:25,870 aiogram.dispatcher WARNING Sleep for 5.056718 seconds and try again... (tryings = 79, bot id = 8779376364)
+2026-09-11 16:02:29,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:59 EEST)" (scheduled at 2026-09-11 19:02:29.768666+03:00)
+2026-09-11 16:02:29,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:02:59 EEST)" executed successfully
+2026-09-11 16:02:30,945 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:30,945 aiogram.dispatcher WARNING Sleep for 4.872109 seconds and try again... (tryings = 65, bot id = 8779376364)
+2026-09-11 16:02:35,404 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:05 EEST)" (scheduled at 2026-09-11 19:02:35.398773+03:00)
+2026-09-11 16:02:35,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:05 EEST)" executed successfully
+2026-09-11 16:02:35,846 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:35,846 aiogram.dispatcher WARNING Sleep for 4.901635 seconds and try again... (tryings = 80, bot id = 8779376364)
+2026-09-11 16:02:40,773 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:40,773 aiogram.dispatcher WARNING Sleep for 4.930585 seconds and try again... (tryings = 66, bot id = 8779376364)
+2026-09-11 16:02:45,727 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:45,727 aiogram.dispatcher WARNING Sleep for 4.940692 seconds and try again... (tryings = 81, bot id = 8779376364)
+2026-09-11 16:02:50,687 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:50,687 aiogram.dispatcher WARNING Sleep for 5.044232 seconds and try again... (tryings = 67, bot id = 8779376364)
+2026-09-11 16:02:55,773 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:02:55,773 aiogram.dispatcher WARNING Sleep for 4.835856 seconds and try again... (tryings = 82, bot id = 8779376364)
+2026-09-11 16:02:59,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:29 EEST)" (scheduled at 2026-09-11 19:02:59.768666+03:00)
+2026-09-11 16:02:59,776 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:29 EEST)" executed successfully
+2026-09-11 16:03:00,822 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:00,822 aiogram.dispatcher WARNING Sleep for 5.159766 seconds and try again... (tryings = 68, bot id = 8779376364)
+2026-09-11 16:03:05,404 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:35 EEST)" (scheduled at 2026-09-11 19:03:05.398773+03:00)
+2026-09-11 16:03:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:35 EEST)" executed successfully
+2026-09-11 16:03:05,999 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:05,999 aiogram.dispatcher WARNING Sleep for 5.125262 seconds and try again... (tryings = 83, bot id = 8779376364)
+2026-09-11 16:03:11,149 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:11,149 aiogram.dispatcher WARNING Sleep for 4.910299 seconds and try again... (tryings = 69, bot id = 8779376364)
+2026-09-11 16:03:16,082 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:16,082 aiogram.dispatcher WARNING Sleep for 5.147942 seconds and try again... (tryings = 84, bot id = 8779376364)
+2026-09-11 16:03:21,245 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:21,245 aiogram.dispatcher WARNING Sleep for 4.952143 seconds and try again... (tryings = 70, bot id = 8779376364)
+2026-09-11 16:03:26,215 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:26,216 aiogram.dispatcher WARNING Sleep for 5.031803 seconds and try again... (tryings = 85, bot id = 8779376364)
+2026-09-11 16:03:29,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:59 EEST)" (scheduled at 2026-09-11 19:03:29.768666+03:00)
+2026-09-11 16:03:29,775 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:03:59 EEST)" executed successfully
+2026-09-11 16:03:31,492 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:31,492 aiogram.dispatcher WARNING Sleep for 5.151011 seconds and try again... (tryings = 71, bot id = 8779376364)
+2026-09-11 16:03:35,401 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:05 EEST)" (scheduled at 2026-09-11 19:03:35.398773+03:00)
+2026-09-11 16:03:35,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:05 EEST)" executed successfully
+2026-09-11 16:03:36,662 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:36,662 aiogram.dispatcher WARNING Sleep for 5.109538 seconds and try again... (tryings = 86, bot id = 8779376364)
+2026-09-11 16:03:41,787 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:41,787 aiogram.dispatcher WARNING Sleep for 5.088792 seconds and try again... (tryings = 72, bot id = 8779376364)
+2026-09-11 16:03:46,898 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:46,899 aiogram.dispatcher WARNING Sleep for 4.955292 seconds and try again... (tryings = 87, bot id = 8779376364)
+2026-09-11 16:03:51,900 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:51,901 aiogram.dispatcher WARNING Sleep for 4.900974 seconds and try again... (tryings = 73, bot id = 8779376364)
+2026-09-11 16:03:56,823 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:03:56,823 aiogram.dispatcher WARNING Sleep for 4.842836 seconds and try again... (tryings = 88, bot id = 8779376364)
+2026-09-11 16:03:59,770 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:29 EEST)" (scheduled at 2026-09-11 19:03:59.768666+03:00)
+2026-09-11 16:03:59,774 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:29 EEST)" executed successfully
+2026-09-11 16:04:01,685 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:01,685 aiogram.dispatcher WARNING Sleep for 5.081132 seconds and try again... (tryings = 74, bot id = 8779376364)
+2026-09-11 16:04:05,402 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:35 EEST)" (scheduled at 2026-09-11 19:04:05.398773+03:00)
+2026-09-11 16:04:05,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:35 EEST)" executed successfully
+2026-09-11 16:04:06,790 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:06,790 aiogram.dispatcher WARNING Sleep for 4.924762 seconds and try again... (tryings = 89, bot id = 8779376364)
+2026-09-11 16:04:11,731 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:11,731 aiogram.dispatcher WARNING Sleep for 4.918718 seconds and try again... (tryings = 75, bot id = 8779376364)
+2026-09-11 16:04:16,668 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:16,668 aiogram.dispatcher WARNING Sleep for 4.929882 seconds and try again... (tryings = 90, bot id = 8779376364)
+2026-09-11 16:04:21,612 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:21,612 aiogram.dispatcher WARNING Sleep for 5.019931 seconds and try again... (tryings = 76, bot id = 8779376364)
+2026-09-11 16:04:26,652 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:26,652 aiogram.dispatcher WARNING Sleep for 4.871903 seconds and try again... (tryings = 91, bot id = 8779376364)
+2026-09-11 16:04:29,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:59 EEST)" (scheduled at 2026-09-11 19:04:29.768666+03:00)
+2026-09-11 16:04:29,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:04:59 EEST)" executed successfully
+2026-09-11 16:04:31,539 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:31,539 aiogram.dispatcher WARNING Sleep for 5.001274 seconds and try again... (tryings = 77, bot id = 8779376364)
+2026-09-11 16:04:35,400 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:05 EEST)" (scheduled at 2026-09-11 19:04:35.398773+03:00)
+2026-09-11 16:04:35,404 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:05 EEST)" executed successfully
+2026-09-11 16:04:36,586 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:36,586 aiogram.dispatcher WARNING Sleep for 4.971683 seconds and try again... (tryings = 92, bot id = 8779376364)
+2026-09-11 16:04:41,773 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:41,773 aiogram.dispatcher WARNING Sleep for 5.065215 seconds and try again... (tryings = 78, bot id = 8779376364)
+2026-09-11 16:04:46,855 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:46,855 aiogram.dispatcher WARNING Sleep for 4.902748 seconds and try again... (tryings = 93, bot id = 8779376364)
+2026-09-11 16:04:51,779 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:51,779 aiogram.dispatcher WARNING Sleep for 4.839441 seconds and try again... (tryings = 79, bot id = 8779376364)
+2026-09-11 16:04:56,639 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:04:56,639 aiogram.dispatcher WARNING Sleep for 5.103340 seconds and try again... (tryings = 94, bot id = 8779376364)
+2026-09-11 16:04:59,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:29 EEST)" (scheduled at 2026-09-11 19:04:59.768666+03:00)
+2026-09-11 16:04:59,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:29 EEST)" executed successfully
+2026-09-11 16:05:01,759 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:01,759 aiogram.dispatcher WARNING Sleep for 4.978906 seconds and try again... (tryings = 80, bot id = 8779376364)
+2026-09-11 16:05:05,402 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:35 EEST)" (scheduled at 2026-09-11 19:05:05.398773+03:00)
+2026-09-11 16:05:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:35 EEST)" executed successfully
+2026-09-11 16:05:06,760 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:06,760 aiogram.dispatcher WARNING Sleep for 4.991519 seconds and try again... (tryings = 95, bot id = 8779376364)
+2026-09-11 16:05:11,767 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:11,767 aiogram.dispatcher WARNING Sleep for 5.078685 seconds and try again... (tryings = 81, bot id = 8779376364)
+2026-09-11 16:05:16,868 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:16,868 aiogram.dispatcher WARNING Sleep for 4.790458 seconds and try again... (tryings = 96, bot id = 8779376364)
+2026-09-11 16:05:21,677 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:21,677 aiogram.dispatcher WARNING Sleep for 5.070848 seconds and try again... (tryings = 82, bot id = 8779376364)
+2026-09-11 16:05:26,793 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:26,794 aiogram.dispatcher WARNING Sleep for 4.873429 seconds and try again... (tryings = 97, bot id = 8779376364)
+2026-09-11 16:05:29,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:59 EEST)" (scheduled at 2026-09-11 19:05:29.768666+03:00)
+2026-09-11 16:05:29,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:05:59 EEST)" executed successfully
+2026-09-11 16:05:31,687 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:31,687 aiogram.dispatcher WARNING Sleep for 5.183298 seconds and try again... (tryings = 83, bot id = 8779376364)
+2026-09-11 16:05:35,403 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:05 EEST)" (scheduled at 2026-09-11 19:05:35.398773+03:00)
+2026-09-11 16:05:35,407 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:05 EEST)" executed successfully
+2026-09-11 16:05:36,899 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:36,899 aiogram.dispatcher WARNING Sleep for 5.022196 seconds and try again... (tryings = 98, bot id = 8779376364)
+2026-09-11 16:05:42,020 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:42,020 aiogram.dispatcher WARNING Sleep for 4.937946 seconds and try again... (tryings = 84, bot id = 8779376364)
+2026-09-11 16:05:47,004 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:47,004 aiogram.dispatcher WARNING Sleep for 4.959987 seconds and try again... (tryings = 99, bot id = 8779376364)
+2026-09-11 16:05:51,986 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:51,986 aiogram.dispatcher WARNING Sleep for 5.054708 seconds and try again... (tryings = 85, bot id = 8779376364)
+2026-09-11 16:05:57,061 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:05:57,061 aiogram.dispatcher WARNING Sleep for 5.061206 seconds and try again... (tryings = 100, bot id = 8779376364)
+2026-09-11 16:05:59,772 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:29 EEST)" (scheduled at 2026-09-11 19:05:59.768666+03:00)
+2026-09-11 16:05:59,776 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:29 EEST)" executed successfully
+2026-09-11 16:06:02,144 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:02,144 aiogram.dispatcher WARNING Sleep for 4.908679 seconds and try again... (tryings = 86, bot id = 8779376364)
+2026-09-11 16:06:05,403 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:35 EEST)" (scheduled at 2026-09-11 19:06:05.398773+03:00)
+2026-09-11 16:06:05,408 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:35 EEST)" executed successfully
+2026-09-11 16:06:07,071 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:07,071 aiogram.dispatcher WARNING Sleep for 5.075716 seconds and try again... (tryings = 101, bot id = 8779376364)
+2026-09-11 16:06:12,168 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:12,168 aiogram.dispatcher WARNING Sleep for 5.090357 seconds and try again... (tryings = 87, bot id = 8779376364)
+2026-09-11 16:06:17,291 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:17,291 aiogram.dispatcher WARNING Sleep for 4.788016 seconds and try again... (tryings = 102, bot id = 8779376364)
+2026-09-11 16:06:22,111 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:22,111 aiogram.dispatcher WARNING Sleep for 5.152937 seconds and try again... (tryings = 88, bot id = 8779376364)
+2026-09-11 16:06:27,296 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:27,296 aiogram.dispatcher WARNING Sleep for 4.972908 seconds and try again... (tryings = 103, bot id = 8779376364)
+2026-09-11 16:06:29,771 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:59 EEST)" (scheduled at 2026-09-11 19:06:29.768666+03:00)
+2026-09-11 16:06:29,775 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:06:59 EEST)" executed successfully
+2026-09-11 16:06:32,286 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:32,286 aiogram.dispatcher WARNING Sleep for 4.907446 seconds and try again... (tryings = 89, bot id = 8779376364)
+2026-09-11 16:06:35,402 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:07:05 EEST)" (scheduled at 2026-09-11 19:06:35.398773+03:00)
+2026-09-11 16:06:35,406 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 19:07:05 EEST)" executed successfully
+2026-09-11 16:06:37,378 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:37,378 aiogram.dispatcher WARNING Sleep for 5.084275 seconds and try again... (tryings = 104, bot id = 8779376364)
+2026-09-11 16:06:42,480 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:42,480 aiogram.dispatcher WARNING Sleep for 5.046316 seconds and try again... (tryings = 90, bot id = 8779376364)
+2026-09-11 16:06:47,554 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:47,555 aiogram.dispatcher WARNING Sleep for 4.730475 seconds and try again... (tryings = 105, bot id = 8779376364)
+2026-09-11 16:06:52,306 aiogram.dispatcher ERROR Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-09-11 16:06:52,306 aiogram.dispatcher WARNING Sleep for 5.035600 seconds and try again... (tryings = 91, bot id = 8779376364)
