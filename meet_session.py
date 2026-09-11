@@ -126,7 +126,7 @@ QUEUED_MARKERS = [
     "waiting to join", "ask to join",
 ]
 
-ORG_MARKERS = ["организатор", "організатор", "organizer"]
+ORG_MARKERS = ["организатор", "організатор", "organizer", "organiser", "host", "хост", "ведучий", "ведущий"]
 
 JOIN_ALSO_LABELS = [
     "Подключиться также на этом устройстве",
@@ -438,6 +438,9 @@ def _count_participants(page):
     return best
 
 
+_ROSTER_DBG = {"n": 0}
+
+
 def _scan_roster(page, text=None):
     """Один проход: (имена, организатор_в_звонке, имя_организатора)."""
     names = set()
@@ -467,10 +470,20 @@ def _scan_roster(page, text=None):
             info = _extract_participant_info(txt, el)
             if info and info.get("name"):
                 names.add(info["name"])
-                if "орган" in txt.lower():
+                aria = ""
+                try:
+                    aria = (el.get_attribute("aria-label") or "").lower()
+                except Exception:
+                    pass
+                probe = txt.lower() + " " + aria
+                row_org_kws = ("орган", "organizer", "organiser", "host", "хост", "ведуч", "ведущ")
+                if any(k in probe for k in row_org_kws):
                     org_present = True
                     if not org_name:
                         org_name = info["name"]
+                elif _ROSTER_DBG["n"] < 12:
+                    _ROSTER_DBG["n"] += 1
+                    logger.info("[roster-dbg] text=%r aria=%r", txt[:120], aria[:120])
     except Exception as e:
         logger.warning("roster scan error: %s", e)
 
@@ -540,38 +553,145 @@ def _enable_captions(page, mid):
 
 def _inject_caption_collector(page):
     result = page.evaluate("""() => {
-        const kws = ['субтитри','субтитры','captions','subtitles','caption','subtitle'];
+        const kws = ['caption', 'subtitle', 'subtitl', '\u0441\u0443\u0431\u0442\u0438\u0442\u0440'];
         function findRegion() {
-            for (const el of document.querySelectorAll('div[role="region"]')) {
+            const regions = document.querySelectorAll('div[role="region"]');
+            for (const el of regions) {
                 const al = (el.getAttribute('aria-label') || '').toLowerCase();
-                if (kws.some(k => al.includes(k))) return el;
+                for (const kw of kws) {
+                    if (al.indexOf(kw) >= 0) return el;
+                }
             }
             return null;
         }
-        const r = findRegion();
-        if (!r) return "NO_CONTAINER";
-        window.__captions = [];
-        window.__capSeen = new Set();
+        function getBlocks(region) {
+            const out = [];
+            const knownTexts = region.querySelectorAll('.ygicle');
+            if (knownTexts.length > 0) {
+                const seen = [];
+                for (const el of knownTexts) {
+                    let block = el.parentElement;
+                    if (block === null || block === region) block = el;
+                    if (seen.indexOf(block) < 0) {
+                        seen.push(block);
+                        out.push(block);
+                    }
+                }
+                if (out.length > 0) return out;
+            }
+            const children = Array.from(region.children);
+            for (const el of children) {
+                if (el.tagName === undefined) continue;
+                const role = el.getAttribute('role') || '';
+                if (role === 'button') continue;
+                if (el.getAttribute('aria-hidden') === 'true') continue;
+                const txt = (el.innerText || el.textContent || '').trim();
+                if (txt.length < 2) continue;
+                out.push(el);
+            }
+            if (out.length > 0) return out;
+            const divs = region.querySelectorAll('div');
+            for (const el of divs) {
+                if (el.querySelector('div')) continue;
+                const txt = (el.innerText || el.textContent || '').trim();
+                if (txt.length < 2) continue;
+                out.push(el);
+            }
+            return out;
+        }
+        function parseBlock(block) {
+            let speaker = '';
+            let text = '';
+            const knownSpeakerEl = block.querySelector('.NWpY1d');
+            const knownTextEl = block.querySelector('.ygicle');
+            if (knownSpeakerEl) speaker = (knownSpeakerEl.textContent || '').trim();
+            if (knownTextEl) text = (knownTextEl.textContent || '').trim();
+            if (text.length === 0) {
+                const inner = block.innerText || block.textContent || '';
+                const lines = inner.split('\\n');
+                const clean = [];
+                for (const line of lines) {
+                    const t = line.trim();
+                    if (t.length > 0) clean.push(t);
+                }
+                if (clean.length >= 2) {
+                    if (speaker.length === 0) speaker = clean[0];
+                    text = clean.slice(1).join(' ');
+                } else if (clean.length === 1) {
+                    text = clean[0];
+                }
+            }
+            if (speaker.length === 0) {
+                const spans = block.querySelectorAll('span');
+                for (const sp of spans) {
+                    const t = (sp.textContent || '').trim();
+                    if (t.length > 0 && t.length <= 100) {
+                        speaker = t;
+                        break;
+                    }
+                }
+            }
+            if (speaker.length > 0 && text.indexOf(speaker) === 0) {
+                text = text.slice(speaker.length).trim();
+            }
+            const ci = speaker.indexOf(':');
+            if (ci >= 0) speaker = speaker.slice(0, ci).trim();
+            while (text.length > 0 && (text.charAt(0) === ':' || text.charAt(0) === ' ')) {
+                text = text.slice(1);
+            }
+            text = text.replace(/\\s+/g, ' ').trim();
+            speaker = speaker.replace(/\\s+/g, ' ').trim();
+            return {speaker: speaker, text: text};
+        }
+        if (window.__capTimer === undefined) {
+        } else {
+            clearInterval(window.__capTimer);
+            window.__capTimer = undefined;
+        }
+        const region = findRegion();
+        if (region === null) return 'NO_CONTAINER';
+        if (window.__captions === undefined) window.__captions = [];
+        if (window.__capState === undefined) window.__capState = new WeakMap();
+        if (window.__capTextSeen === undefined) window.__capTextSeen = new Set();
+        window.__capRegion = region;
         function scan() {
-            let currentName = '';
-            for (const node of r.querySelectorAll('.nMcdL, .ygicle')) {
-                if (node.classList.contains('nMcdL')) {
-                    const el = node.querySelector('.NWpY1d');
-                    currentName = el ? el.textContent.trim() : '';
-                } else if (node.classList.contains('ygicle')) {
-                    const text = node.textContent.trim();
-                    if (!text || text.length < 10) continue;
-                    if (window.__capSeen.has(text)) continue;
-                    window.__capSeen.add(text);
-                    window.__captions.push((currentName ? currentName + ': ' : '') + text);
+            let reg = window.__capRegion;
+            if (reg === undefined || reg === null || reg.isConnected === false) {
+                reg = findRegion();
+                if (reg === null) return;
+                window.__capRegion = reg;
+            }
+            const blocks = getBlocks(reg);
+            for (const block of blocks) {
+                const parsed = parseBlock(block);
+                const text = parsed.text;
+                if (text.length < 2) continue;
+                let st = window.__capState.get(block);
+                if (st === undefined) {
+                    st = {last: '', speaker: '', stable: 0, done: false};
+                    window.__capState.set(block, st);
+                }
+                if (text === st.last) {
+                    st.stable += 1;
+                } else {
+                    st.last = text;
+                    st.speaker = parsed.speaker;
+                    st.stable = 1;
+                    st.done = false;
+                }
+                if (st.stable >= 5 && st.done === false) {
+                    st.done = true;
+                    const norm = (st.speaker + '||' + st.last).toLowerCase().replace(/\\s+/g, ' ').trim();
+                    if (window.__capTextSeen.has(norm) === false) {
+                        window.__capTextSeen.add(norm);
+                        window.__captions.push({speaker: st.speaker, text: st.last});
+                    }
                 }
             }
         }
         scan();
-        const obs = new MutationObserver(muts => scan());
-        obs.observe(r, { childList: true, subtree: true });
-        window.__capObserver = obs;
-        return "OK";
+        window.__capTimer = setInterval(scan, 1000);
+        return 'OK';
     }""")
     return result
 
@@ -583,27 +703,76 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             return out;
         }""")
         if not lines:
-            return
+            return 0
+        noise = {
+            "\u0435\u0449\u0451", "\u0447\u0435\u043b", "mes.", "est.", "so?", "yep",
+            "zoom_in", "open_in_new", "open_in_full", "fullscreen", "fullscreen_exit",
+            "more_vert", "expand_more", "chat", "people", "schedule", "info",
+            "call_end", "mic", "videocam", "videocam_off", "mic_off", "push_pin",
+            "screen_share", "stop_screen_share", "closed_caption", "closed_caption_off",
+            "present now", "present_to_all", "stop_presenting"
+        }
+        presentation_prefixes = (
+            "\u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f:",
+            "\u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0456\u044f:",
+            "presentation:",
+        )
         filtered = []
-        noise = {"ещё","чел","mes.","est.","so?","yep","zoom_in","open_in_new","open_in_full",
-                 "fullscreen","fullscreen_exit","more_vert","expand_more","chat","people",
-                 "schedule","info","call_end","mic","videocam","videocam_off","mic_off",
-                 "push_pin","screen_share","stop_screen_share","closed_caption",
-                 "closed_caption_off","present now","present_to_all","stop_presenting"}
-        for l in lines:
-            txt = l.split(":", 1)[1] if ":" in l else l
-            tlow = txt.strip().lower()
-            if any(n in tlow for n in noise):
+        seen = set()
+        for item in lines:
+            if item is None:
                 continue
-            if len(txt.strip()) < 10:
+            if isinstance(item, dict):
+                speaker = str(item.get("speaker", "")).strip()
+                txt = str(item.get("text", "")).strip()
+            else:
+                raw = str(item)
+                if ":" in raw:
+                    speaker, txt = raw.split(":", 1)
+                else:
+                    speaker, txt = "", raw
+                speaker = speaker.strip()
+                txt = txt.strip()
+            if speaker.count(":") > 0:
+                speaker = speaker.split(":", 1)[0].strip()
+            while txt.startswith(":"):
+                txt = txt[1:].strip()
+            changed = True
+            while changed:
+                changed = False
+                low_txt = txt.lower()
+                for pref in presentation_prefixes:
+                    if low_txt.startswith(pref):
+                        txt = txt[len(pref):].strip()
+                        changed = True
+                        break
+            if len(txt) < 10:
                 continue
-            if all(c in "abcdefghijklmnopqrstuvwxyz_0123456789" for c in tlow.replace(" ", "_")):
-                if len(txt.strip()) <= 20:
+            low = txt.lower()
+            full_low = (speaker + " " + txt).lower()
+            bad = False
+            for n in noise:
+                if n in full_low:
+                    bad = True
+                    break
+            if bad:
+                continue
+            normalized = low.replace(" ", "_")
+            if all(ch in "abcdefghijklmnopqrstuvwxyz_0123456789" for ch in normalized):
+                if len(txt) <= 20:
                     continue
-            filtered.append(l)
+            key = (speaker.lower(), low)
+            if key in seen:
+                continue
+            seen.add(key)
+            if speaker:
+                filtered.append(speaker + ": " + txt)
+            else:
+                filtered.append(txt)
         if not filtered:
-            return
-        fn = os.path.join(SUBS_DIR, f"{mid}.txt")
+            return 0
+        os.makedirs(SUBS_DIR, exist_ok=True)
+        fn = os.path.join(SUBS_DIR, mid + ".txt")
         with open(fn, "a", encoding="utf-8") as f:
             for line in filtered:
                 f.write(line + "\n")
@@ -612,13 +781,15 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             try:
                 requests.post(
                     f"https://api.telegram.org/bot{token}/sendMessage",
-                    json={"chat_id": chat_id, "text": f"[subs] +{len(filtered)} строк -> {fn}"},
+                    json={"chat_id": chat_id, "text": "[subs] +" + str(len(filtered)) + " -> " + fn},
                     timeout=15,
                 )
             except Exception as e:
                 logger.warning("tg cap notice err: %s", e)
+        return len(filtered)
     except Exception as e:
         logger.error("Caption flush error: %s", e)
+        return 0
 
 def _ensure_media_off(page, mid):
     prefixes = ("Выключить ", "Вимкнути ", "Turn off ", "Отключить ")
