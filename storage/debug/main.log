@@ -851,3 +851,23 @@
 2026-09-11 21:24:27,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:24:57 EEST)" executed successfully
 2026-09-11 21:24:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:25:27 EEST)" (scheduled at 2026-09-12 00:24:57.770733+03:00)
 2026-09-11 21:24:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:25:27 EEST)" executed successfully
+2026-09-11 21:25:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:25:57 EEST)" (scheduled at 2026-09-12 00:25:27.770733+03:00)
+2026-09-11 21:25:27,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:25:57 EEST)" executed successfully
+2026-09-11 21:25:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:26:27 EEST)" (scheduled at 2026-09-12 00:25:57.770733+03:00)
+2026-09-11 21:25:57,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:26:27 EEST)" executed successfully
+2026-09-11 21:26:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:26:57 EEST)" (scheduled at 2026-09-12 00:26:27.770733+03:00)
+2026-09-11 21:26:27,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:26:57 EEST)" executed successfully
+2026-09-11 21:26:57,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:27:27 EEST)" (scheduled at 2026-09-12 00:26:57.770733+03:00)
+2026-09-11 21:26:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:27:27 EEST)" executed successfully
+2026-09-11 21:27:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:27:57 EEST)" (scheduled at 2026-09-12 00:27:27.770733+03:00)
+2026-09-11 21:27:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:27:57 EEST)" executed successfully
+2026-09-11 21:27:57,776 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:28:27 EEST)" (scheduled at 2026-09-12 00:27:57.770733+03:00)
+2026-09-11 21:27:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:28:27 EEST)" executed successfully
+2026-09-11 21:28:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:28:57 EEST)" (scheduled at 2026-09-12 00:28:27.770733+03:00)
+2026-09-11 21:28:27,785 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:28:57 EEST)" executed successfully
+2026-09-11 21:28:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:29:27 EEST)" (scheduled at 2026-09-12 00:28:57.770733+03:00)
+2026-09-11 21:28:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:29:27 EEST)" executed successfully
+2026-09-11 21:29:27,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:29:57 EEST)" (scheduled at 2026-09-12 00:29:27.770733+03:00)
+2026-09-11 21:29:27,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:29:57 EEST)" executed successfully
+2026-09-11 21:29:57,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:30:27 EEST)" (scheduled at 2026-09-12 00:29:57.770733+03:00)
+2026-09-11 21:29:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 00:30:27 EEST)" executed successfully
