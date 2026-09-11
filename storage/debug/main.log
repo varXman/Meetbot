@@ -45,3 +45,9 @@
 2026-09-11 18:02:57,786 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:03:27 EEST)" executed successfully
 2026-09-11 18:03:27,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:03:57 EEST)" (scheduled at 2026-09-11 21:03:27.770733+03:00)
 2026-09-11 18:03:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:03:57 EEST)" executed successfully
+2026-09-11 18:03:57,779 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:04:27 EEST)" (scheduled at 2026-09-11 21:03:57.770733+03:00)
+2026-09-11 18:03:57,784 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:04:27 EEST)" executed successfully
+2026-09-11 18:04:27,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:04:57 EEST)" (scheduled at 2026-09-11 21:04:27.770733+03:00)
+2026-09-11 18:04:27,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:04:57 EEST)" executed successfully
+2026-09-11 18:04:57,780 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:05:27 EEST)" (scheduled at 2026-09-11 21:04:57.770733+03:00)
+2026-09-11 18:04:57,784 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 21:05:27 EEST)" executed successfully
