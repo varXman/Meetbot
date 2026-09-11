@@ -1,9 +1,13 @@
-2026-09-10 22:04:07,438 root INFO Scheduler | пересобран (Киев): записей расписания 0, проверка каждые 30 с, одна сессия за раз
-2026-09-10 22:04:07,439 aiogram.dispatcher INFO Start polling
-2026-09-10 22:04:07,738 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
-2026-09-10 22:04:15,134 aiogram.event INFO Update id=566224843 is handled. Duration 73 ms by bot id=8779376364
-2026-09-10 22:04:19,209 aiogram.event INFO Update id=566224844 is not handled. Duration 10 ms by bot id=8779376364
-2026-09-10 22:04:19,209 aiogram.event ERROR Cause exception while process update id=566224844 by bot id=8779376364
+2026-09-11 07:17:58,126 root INFO Scheduler | пересобран (Киев): записей расписания 2, проверка каждые 30 с, одна сессия за раз
+2026-09-11 07:17:58,126 aiogram.dispatcher INFO Start polling
+2026-09-11 07:17:58,182 aiogram.dispatcher INFO Run polling for bot @meet_112_bot id=8779376364 - 'meetbot'
+2026-09-11 07:18:28,132 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:18:58 EEST)" (scheduled at 2026-09-11 10:18:28.121947+03:00)
+2026-09-11 07:18:28,138 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:18:58 EEST)" executed successfully
+2026-09-11 07:18:58,126 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:28 EEST)" (scheduled at 2026-09-11 10:18:58.121947+03:00)
+2026-09-11 07:18:58,131 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:28 EEST)" executed successfully
+2026-09-11 07:19:04,371 aiogram.event INFO Update id=566224851 is handled. Duration 80 ms by bot id=8779376364
+2026-09-11 07:19:24,799 aiogram.event INFO Update id=566224852 is not handled. Duration 19 ms by bot id=8779376364
+2026-09-11 07:19:24,799 aiogram.event ERROR Cause exception while process update id=566224852 by bot id=8779376364
 ValueError: too many values to unpack (expected 2)
 Traceback (most recent call last):
   File "/opt/meet-bot/.venv/lib/python3.14/site-packages/aiogram/dispatcher/dispatcher.py", line 321, in _process_update
@@ -55,15 +59,29 @@ Traceback (most recent call last):
     ok, msg = await sessions.start_session(m, dur, TOKEN, str(CHAT_ID))
     ^^^^^^^
 ValueError: too many values to unpack (expected 2)
-2026-09-10 22:04:37,446 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:05:07 EEST)" (scheduled at 2026-09-11 01:04:37.434892+03:00)
-2026-09-10 22:04:37,454 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:05:07 EEST)" executed successfully
-2026-09-10 22:05:07,439 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:05:37 EEST)" (scheduled at 2026-09-11 01:05:07.434892+03:00)
-2026-09-10 22:05:07,444 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:05:37 EEST)" executed successfully
-2026-09-10 22:05:37,443 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:06:07 EEST)" (scheduled at 2026-09-11 01:05:37.434892+03:00)
-2026-09-10 22:05:37,446 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:06:07 EEST)" executed successfully
-2026-09-10 22:06:07,444 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:06:37 EEST)" (scheduled at 2026-09-11 01:06:07.434892+03:00)
-2026-09-10 22:06:07,447 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:06:37 EEST)" executed successfully
-2026-09-10 22:06:37,442 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:07:07 EEST)" (scheduled at 2026-09-11 01:06:37.434892+03:00)
-2026-09-10 22:06:37,455 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:07:07 EEST)" executed successfully
-2026-09-10 22:07:07,439 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:07:37 EEST)" (scheduled at 2026-09-11 01:07:07.434892+03:00)
-2026-09-10 22:07:07,442 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 01:07:37 EEST)" executed successfully
+2026-09-11 07:19:28,127 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:58 EEST)" (scheduled at 2026-09-11 10:19:28.121947+03:00)
+2026-09-11 07:19:28,137 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:19:58 EEST)" executed successfully
+2026-09-11 07:19:58,126 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:28 EEST)" (scheduled at 2026-09-11 10:19:58.121947+03:00)
+2026-09-11 07:19:58,135 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:28 EEST)" executed successfully
+2026-09-11 07:20:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:58 EEST)" (scheduled at 2026-09-11 10:20:28.121947+03:00)
+2026-09-11 07:20:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:20:58 EEST)" executed successfully
+2026-09-11 07:20:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:28 EEST)" (scheduled at 2026-09-11 10:20:58.121947+03:00)
+2026-09-11 07:20:58,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:28 EEST)" executed successfully
+2026-09-11 07:21:28,124 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:58 EEST)" (scheduled at 2026-09-11 10:21:28.121947+03:00)
+2026-09-11 07:21:28,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:21:58 EEST)" executed successfully
+2026-09-11 07:21:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:28 EEST)" (scheduled at 2026-09-11 10:21:58.121947+03:00)
+2026-09-11 07:21:58,131 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:28 EEST)" executed successfully
+2026-09-11 07:22:28,123 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:58 EEST)" (scheduled at 2026-09-11 10:22:28.121947+03:00)
+2026-09-11 07:22:28,128 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:22:58 EEST)" executed successfully
+2026-09-11 07:22:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:28 EEST)" (scheduled at 2026-09-11 10:22:58.121947+03:00)
+2026-09-11 07:22:58,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:28 EEST)" executed successfully
+2026-09-11 07:23:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:58 EEST)" (scheduled at 2026-09-11 10:23:28.121947+03:00)
+2026-09-11 07:23:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:23:58 EEST)" executed successfully
+2026-09-11 07:23:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:28 EEST)" (scheduled at 2026-09-11 10:23:58.121947+03:00)
+2026-09-11 07:23:58,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:28 EEST)" executed successfully
+2026-09-11 07:24:28,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:58 EEST)" (scheduled at 2026-09-11 10:24:28.121947+03:00)
+2026-09-11 07:24:28,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:24:58 EEST)" executed successfully
+2026-09-11 07:24:58,125 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:28 EEST)" (scheduled at 2026-09-11 10:24:58.121947+03:00)
+2026-09-11 07:24:58,129 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:28 EEST)" executed successfully
+2026-09-11 07:25:28,124 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:58 EEST)" (scheduled at 2026-09-11 10:25:28.121947+03:00)
+2026-09-11 07:25:28,130 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-11 10:25:58 EEST)" executed successfully
