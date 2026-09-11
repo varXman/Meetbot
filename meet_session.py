@@ -711,6 +711,14 @@ def _inject_caption_collector(page):
     }""")
     return result
 
+MEET_NAMES = [
+    "ukrdil", "pdr", "galuz_ekon", "ohorona", "materialy", "spec_tech",
+    "ukrdil2", "elektro", "zakhyst", "bud_kresl", "trud_zakon",
+    "inf_tech", "anhliyska", "fizkultura",
+]
+_SUBS_FILES = {}
+
+
 def _flush_captions(page, mid, token=None, chat_id=None):
     try:
         lines = page.evaluate("""() => {
@@ -796,8 +804,18 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             filtered.append(txt)
         if not filtered:
             return 0
-        os.makedirs(SUBS_DIR, exist_ok=True)
-        fn = os.path.join(SUBS_DIR, mid + ".txt")
+        if mid not in _SUBS_FILES:
+            key = mid.lower()
+            cat = "UNKNOWN"
+            for name in MEET_NAMES:
+                if name in key:
+                    cat = name
+                    break
+            stamp = datetime.now(TZ).strftime("%Y%m%d_%H%M%S")
+            d = os.path.join(SUBS_DIR, cat)
+            os.makedirs(d, exist_ok=True)
+            _SUBS_FILES[mid] = os.path.join(d, stamp + ".txt")
+        fn = _SUBS_FILES[mid]
         with open(fn, "a", encoding="utf-8") as f:
             for line in filtered:
                 f.write(line + "\n")
