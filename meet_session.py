@@ -674,17 +674,33 @@ def _inject_caption_collector(page):
                 if (text === st.last) {
                     st.stable += 1;
                 } else {
+                    if (st.last && text.indexOf(st.last) !== 0) {
+                        st.emitted = '';
+                    }
                     st.last = text;
                     st.speaker = parsed.speaker;
                     st.stable = 1;
                     st.done = false;
                 }
-                if (st.stable >= 5 && st.done === false) {
-                    st.done = true;
-                    const norm = (st.speaker + '||' + st.last).toLowerCase().replace(/\\s+/g, ' ').trim();
-                    if (window.__capTextSeen.has(norm) === false) {
-                        window.__capTextSeen.add(norm);
-                        window.__captions.push({speaker: st.speaker, text: st.last});
+                if (st.stable >= 5) {
+                    const emitted = (st.emitted === undefined) ? '' : st.emitted;
+                    if (st.last.length > emitted.length && st.last.indexOf(emitted) === 0) {
+                        const piece = st.last.slice(emitted.length).trim();
+                        if (piece.length >= 3) {
+                            const norm = piece.toLowerCase().replace(/\\s+/g, ' ').trim();
+                            if (window.__capTextSeen.has(norm) === false) {
+                                window.__capTextSeen.add(norm);
+                                window.__captions.push({speaker: st.speaker, text: piece});
+                            }
+                        }
+                        st.emitted = st.last;
+                    } else if (emitted.length === 0) {
+                        const norm = st.last.toLowerCase().replace(/\\s+/g, ' ').trim();
+                        if (window.__capTextSeen.has(norm) === false) {
+                            window.__capTextSeen.add(norm);
+                            window.__captions.push({speaker: st.speaker, text: st.last});
+                        }
+                        st.emitted = st.last;
                     }
                 }
             }
@@ -710,7 +726,12 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             "more_vert", "expand_more", "chat", "people", "schedule", "info",
             "call_end", "mic", "videocam", "videocam_off", "mic_off", "push_pin",
             "screen_share", "stop_screen_share", "closed_caption", "closed_caption_off",
-            "present now", "present_to_all", "stop_presenting"
+            "present now", "present_to_all", "stop_presenting",
+            "arrow_downward", "arrow_upward", "keep", "visual_effects",
+            "\u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u0432\u043d\u0438\u0437",
+            "\u043f\u0435\u0440\u0435\u0439\u0442\u0438 \u0432\u0433\u043e\u0440\u0443",
+            "\u0434\u043e \u043f\u043e\u0447\u0430\u0442\u043a\u0443",
+            "\u043a \u043d\u0430\u0447\u0430\u043b\u0443"
         }
         presentation_prefixes = (
             "\u043f\u0440\u0435\u0437\u0435\u043d\u0442\u0430\u0446\u0438\u044f:",
@@ -761,14 +782,18 @@ def _flush_captions(page, mid, token=None, chat_id=None):
             if all(ch in "abcdefghijklmnopqrstuvwxyz_0123456789" for ch in normalized):
                 if len(txt) <= 20:
                     continue
-            key = (speaker.lower(), low)
+            key = low
             if key in seen:
                 continue
+            dup = False
+            for k in seen:
+                if low.startswith(k) or k.startswith(low):
+                    dup = True
+                    break
+            if dup:
+                continue
             seen.add(key)
-            if speaker:
-                filtered.append(speaker + ": " + txt)
-            else:
-                filtered.append(txt)
+            filtered.append(txt)
         if not filtered:
             return 0
         os.makedirs(SUBS_DIR, exist_ok=True)
