@@ -1751,3 +1751,46 @@
 2026-09-12 01:09:27,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:09:57 EEST)" executed successfully
 2026-09-12 01:09:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:10:27 EEST)" (scheduled at 2026-09-12 04:09:57.770733+03:00)
 2026-09-12 01:09:57,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:10:27 EEST)" executed successfully
+2026-09-12 01:10:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:10:57 EEST)" (scheduled at 2026-09-12 04:10:27.770733+03:00)
+2026-09-12 01:10:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:10:57 EEST)" executed successfully
+2026-09-12 01:10:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:11:27 EEST)" (scheduled at 2026-09-12 04:10:57.770733+03:00)
+2026-09-12 01:10:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:11:27 EEST)" executed successfully
+2026-09-12 01:11:03,888 aiogram.dispatcher ERROR Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2026-09-12 01:11:03,888 aiogram.dispatcher WARNING Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8779376364)
+2026-09-12 01:11:04,900 aiogram.dispatcher ERROR Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2026-09-12 01:11:04,900 aiogram.dispatcher WARNING Sleep for 1.212515 seconds and try again... (tryings = 1, bot id = 8779376364)
+2026-09-12 01:11:06,126 aiogram.dispatcher ERROR Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2026-09-12 01:11:06,126 aiogram.dispatcher WARNING Sleep for 1.634565 seconds and try again... (tryings = 2, bot id = 8779376364)
+2026-09-12 01:11:07,774 aiogram.dispatcher ERROR Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2026-09-12 01:11:07,774 aiogram.dispatcher WARNING Sleep for 2.078958 seconds and try again... (tryings = 3, bot id = 8779376364)
+2026-09-12 01:11:12,252 aiogram.dispatcher ERROR Failed to fetch updates - TelegramServerError: Telegram server says - Bad Gateway
+2026-09-12 01:11:12,252 aiogram.dispatcher WARNING Sleep for 2.717171 seconds and try again... (tryings = 4, bot id = 8779376364)
+2026-09-12 01:11:14,984 aiogram.dispatcher ERROR Failed to fetch updates - TelegramServerError: Telegram server says - Bad Gateway
+2026-09-12 01:11:14,984 aiogram.dispatcher WARNING Sleep for 3.551108 seconds and try again... (tryings = 5, bot id = 8779376364)
+2026-09-12 01:11:18,550 aiogram.dispatcher ERROR Failed to fetch updates - TelegramServerError: Telegram server says - Bad Gateway
+2026-09-12 01:11:18,551 aiogram.dispatcher WARNING Sleep for 4.607952 seconds and try again... (tryings = 6, bot id = 8779376364)
+2026-09-12 01:11:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:11:57 EEST)" (scheduled at 2026-09-12 04:11:27.770733+03:00)
+2026-09-12 01:11:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:11:57 EEST)" executed successfully
+2026-09-12 01:11:57,785 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:12:27 EEST)" (scheduled at 2026-09-12 04:11:57.770733+03:00)
+2026-09-12 01:11:57,791 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:12:27 EEST)" executed successfully
+2026-09-12 01:12:14,155 aiogram.dispatcher INFO Connection established (tryings = 7, bot id = 8779376364)
+2026-09-12 01:12:27,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:12:57 EEST)" (scheduled at 2026-09-12 04:12:27.770733+03:00)
+2026-09-12 01:12:27,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:12:57 EEST)" executed successfully
+2026-09-12 01:12:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:13:27 EEST)" (scheduled at 2026-09-12 04:12:57.770733+03:00)
+2026-09-12 01:12:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:13:27 EEST)" executed successfully
+2026-09-12 01:13:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:13:57 EEST)" (scheduled at 2026-09-12 04:13:27.770733+03:00)
+2026-09-12 01:13:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:13:57 EEST)" executed successfully
+2026-09-12 01:13:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:14:27 EEST)" (scheduled at 2026-09-12 04:13:57.770733+03:00)
+2026-09-12 01:13:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:14:27 EEST)" executed successfully
+2026-09-12 01:14:27,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:14:57 EEST)" (scheduled at 2026-09-12 04:14:27.770733+03:00)
+2026-09-12 01:14:27,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:14:57 EEST)" executed successfully
+2026-09-12 01:14:57,775 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:15:27 EEST)" (scheduled at 2026-09-12 04:14:57.770733+03:00)
+2026-09-12 01:14:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-12 04:15:27 EEST)" executed successfully
