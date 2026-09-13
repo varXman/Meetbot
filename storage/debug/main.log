@@ -7534,3 +7534,23 @@ Original description: Too Many Requests: retry after 5
 2026-09-13 01:09:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:09:57 EEST)" executed successfully
 2026-09-13 01:09:57,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:10:27 EEST)" (scheduled at 2026-09-13 04:09:57.770733+03:00)
 2026-09-13 01:09:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:10:27 EEST)" executed successfully
+2026-09-13 01:10:27,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:10:57 EEST)" (scheduled at 2026-09-13 04:10:27.770733+03:00)
+2026-09-13 01:10:27,781 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:10:57 EEST)" executed successfully
+2026-09-13 01:10:57,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:11:27 EEST)" (scheduled at 2026-09-13 04:10:57.770733+03:00)
+2026-09-13 01:10:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:11:27 EEST)" executed successfully
+2026-09-13 01:11:27,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:11:57 EEST)" (scheduled at 2026-09-13 04:11:27.770733+03:00)
+2026-09-13 01:11:27,781 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:11:57 EEST)" executed successfully
+2026-09-13 01:11:57,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:12:27 EEST)" (scheduled at 2026-09-13 04:11:57.770733+03:00)
+2026-09-13 01:11:57,778 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:12:27 EEST)" executed successfully
+2026-09-13 01:12:27,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:12:57 EEST)" (scheduled at 2026-09-13 04:12:27.770733+03:00)
+2026-09-13 01:12:27,779 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:12:57 EEST)" executed successfully
+2026-09-13 01:12:57,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:13:27 EEST)" (scheduled at 2026-09-13 04:12:57.770733+03:00)
+2026-09-13 01:12:57,782 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:13:27 EEST)" executed successfully
+2026-09-13 01:13:27,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:13:57 EEST)" (scheduled at 2026-09-13 04:13:27.770733+03:00)
+2026-09-13 01:13:27,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:13:57 EEST)" executed successfully
+2026-09-13 01:13:57,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:14:27 EEST)" (scheduled at 2026-09-13 04:13:57.770733+03:00)
+2026-09-13 01:13:57,777 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:14:27 EEST)" executed successfully
+2026-09-13 01:14:27,773 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:14:57 EEST)" (scheduled at 2026-09-13 04:14:27.770733+03:00)
+2026-09-13 01:14:27,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:14:57 EEST)" executed successfully
+2026-09-13 01:14:57,774 apscheduler.executors.default INFO Running job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:15:27 EEST)" (scheduled at 2026-09-13 04:14:57.770733+03:00)
+2026-09-13 01:14:57,780 apscheduler.executors.default INFO Job "_scan (trigger: interval[0:00:30], next run at: 2026-09-13 04:15:27 EEST)" executed successfully
